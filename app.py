@@ -24,6 +24,12 @@ def get_stories():
     return render_template("stories.html", stories=stories)
 
 
+@app.route("/get_jokes")
+def get_jokes():
+    jokes = mongo.db.jokes.find()
+    return render_template("jokes.html", jokes=jokes)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
