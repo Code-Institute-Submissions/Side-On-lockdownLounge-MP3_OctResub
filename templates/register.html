@@ -1,22 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div class="row">
-    <div class="col s12">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix"></i>
-          <input type="text" id="first-name" class="autocomplete">
-          <label for="first-name">First Name</label>
+<div class="row">
+    <form class="col s12 m8 offset-m2">
+        <div class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <input type="text" id="first-name" class="autocomplete">
+                    <label for="first-name">First Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix"></i>
+                    <input type="text" id="last-name" class="autocomplete">
+                    <label for="last-name">Last Name</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-envelope prefix"></i>
+                    <input type="text" name="email-address" id="email-address" class="vaildate">
+                    <label for="email-address">Email Address</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="far fa-calendar-alt prefix"></i>
+                    <input type="text" name="date-of-birth" id="date-of-birth" class="datepicker">
+                    <label for="date-of-birth">Date of Brith</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-id-card prefix"></i>
+                    <input type="text" name="username" id="username" class="validate">
+                    <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-user-lock prefix"></i>
+                    <input type="password" name="password" id="password" class="vaildate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+            <button class="col s12 btn-large" type="submit">Register
+                <i class="fas fa-sign-in-alt"></i>
+            </button>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix"></i>
-          <input type="text" id="last-name" class="autocomplete">
-          <label for="last-name">Last Name</label>
-        </div>
-      </div>
-    </div>
-  </div>
+    </form>
+</div>
 {% endblock %}
