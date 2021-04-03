@@ -9,8 +9,6 @@
         crossorigin="anonymous" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -29,17 +27,6 @@
                 <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
                 <li><button class="col s12 btn-small" type="submit">Sign In</button></li>
-                <li>
-                    <div class="nav-wrapper">
-                        <form>
-                            <div class="input-field">
-                                <input id="search" type="search" required>
-                                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                <i class="material-icons">close</i>
-                            </div>
-                        </form>
-                    </div>
-                </li>
             </ul>
         </div>
     </nav>
@@ -52,9 +39,27 @@
         <li><button class="col s12 btn-small" type="submit">Sign In</button></li>
     </ul>
 
+<section>
+    <!--flash messages-->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row flashes">
+                    <h4 class="light-green center-align">{{ message }}               
+                    </h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+</section>
+
+
+<main class="container">
     {% block content %}
     {% endblock %}
-
+</main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
