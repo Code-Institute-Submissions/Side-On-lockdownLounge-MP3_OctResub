@@ -17,29 +17,27 @@
 </head>
 
 <body>
-      <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">The Lockdown Lounge</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
+                <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><button class="col s12 btn-small" type="submit">Sign In</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
         <li><a href="#">Home</a></li>
         <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
         <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
-        <li><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a></li>
-
-      </ul>
-    </div>
-  </nav>
-
-  <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Home</a></li>
-        <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
-        <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
-        <li><a href="{{ url_for('register') }}">Register</a></li>
-    <li><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a></li>
-
-  </ul>
+        <li><button class="col s12 btn-small" type="submit">Sign In</button></li>
+    </ul>
 
     {% block content %}
     {% endblock %}
