@@ -26,6 +26,8 @@
                 <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
                 <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
                 <li><a href="{{ url_for('register') }}">Register</a></li>
+                <li><a href="{{ url_for('login') }}">Log In</a></li>
+                <li><a href="">Log Out</a></li>
                 <li><button class="col s12 btn-small" type="submit">Sign In</button></li>
             </ul>
         </div>
@@ -36,30 +38,32 @@
         <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
         <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
         <li><a href="{{ url_for('register') }}">Register</a></li>
+        <li><a href="{{ url_for('login') }}">Log In</a></li>
+        <li><a href="">Log Out</a></li>
         <li><button class="col s12 btn-small" type="submit">Sign In</button></li>
     </ul>
 
-<section>
-    <!--flash messages-->
-    {% with messages = get_flashed_messages() %}
+    <section>
+        <!--flash messages-->
+        {% with messages = get_flashed_messages() %}
         {% if messages %}
-            {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="light-green center-align">{{ message }}               
-                    </h4>
-                </div>
-            {% endfor %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="light-green center-align">{{ message }}
+            </h4>
+        </div>
+        {% endfor %}
         {% endif %}
-    {% endwith %}
+        {% endwith %}
 
 
-</section>
+    </section>
 
 
-<main class="container">
-    {% block content %}
-    {% endblock %}
-</main>
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
