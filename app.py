@@ -21,13 +21,13 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_stories")
 def get_stories():
-    stories = mongo.db.stories.find()
+    stories = list(mongo.db.stories.find())
     return render_template("stories.html", stories=stories)
 
 
 @app.route("/get_jokes")
 def get_jokes():
-    jokes = mongo.db.jokes.find()
+    jokes = list(mongo.db.jokes.find())
     return render_template("jokes.html", jokes=jokes)
 
 
