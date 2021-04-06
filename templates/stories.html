@@ -7,18 +7,43 @@
         <div class="collapsible-header"><i class="fas fa-caret-down"></i>
             <strong>{{ story.story_title }}</strong>
         </div>
-        <div class="collapsible-body"><span>{{ story.story_content }}</span></div>
+        <div class="collapsible-body"><span>{{ story.story_content }}</span>
+            <p>Created by: {{ story.created_by }}</p>
+        </div>
     </li>
     {% endfor %}
 </ul>
 {% if session.user %}
-<form method="POST" action="">
-    <div class="input-field col s12">
-        <i class="fas fa-book-open prefix"></i>
-        <input type="text" name="add_story" id="add_story" class="validate" minlength="5" maxlength="50" required>
-        <label for="add_story">Post your story</label>
+<div class="row">
+    <div class="col s12 m5">
+        <div class="card-panel">
+            <form method="POST" action="{{ url_for('add_story') }}">
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" name="story_title" id="story_title" class="validate" minlength="5"
+                                    maxlength="15" required>
+                                <label for="story_title">Story Title</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <!--<i class="fas fa-book-open prefix"></i>-->
+                                <input type="text" name="story_content" id="story_content" class="validate"
+                                    minlength="5" maxlength="300" data-length="15" required>
+                                <label for="story_content">Story Content</label>
+                                <button class="col s6 btn-large sign-in-button offset-m3" type="submit">Submit!
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </form>
+        </div>
     </div>
-    <a class="waves-effect waves-light btn">Submit!</a>
-</form>
+</div>
+
 {% endif %}
 {% endblock %}

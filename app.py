@@ -68,11 +68,11 @@ def login():
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "profile", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
 
             else:
                 flash("Incorrect Username and/or Password")
@@ -99,10 +99,18 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_story")
+@app.route("/add_story", methods=["GET", "POST"])
 def add_story():
+    if request.method == "POST":
+        story = {
+            "story_title": request.form.get("story_title"),
+            "story_content": request.form.get("story_content"),
+            "created_by": session["user"]
+        }
+        mongo.db.stories.insert_one(story)
     flash("Your story has been added!")
-    
+    return redirect(url_for("get_stories"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
