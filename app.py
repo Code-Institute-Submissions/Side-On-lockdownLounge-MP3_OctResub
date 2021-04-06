@@ -112,6 +112,19 @@ def add_story():
     return redirect(url_for("get_stories"))
 
 
+@app.route("/add_joke", methods=["GET", "POST"])
+def add_joke():
+    if request.method == "POST":
+        joke = {
+            "joke_title": request.form.get("joke_title"),
+            "joke_content": request.form.get("joke_content"),
+            "created_by": session["user"]
+        }
+        mongo.db.jokes.insert_one(joke)
+    flash("Your joke has been added!")
+    return redirect(url_for("get_jokes"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
