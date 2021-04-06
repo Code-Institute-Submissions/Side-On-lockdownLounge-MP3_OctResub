@@ -11,7 +11,7 @@
     </li>
     {% endfor %}
 </ul>
-
+{% if session.user %}
 <form method="POST" action="">
     <div class="input-field col s12">
         <i class="fas fa-book-open prefix"></i>
@@ -20,5 +20,5 @@
     </div>
     <a class="waves-effect waves-light btn">Submit!</a>
 </form>
-
+{% endif %}
 {% endblock %}
