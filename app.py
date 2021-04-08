@@ -99,17 +99,15 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_story", methods=["GET", "POST"])
+@app.route("/add_story")
 def add_story():
-    if request.method == "POST":
-        story = {
-            "story_title": request.form.get("story_title"),
-            "story_content": request.form.get("story_content"),
-            "created_by": session["user"]
-        }
-        mongo.db.stories.insert_one(story)
-    flash("Your story has been added!")
-    return redirect(url_for("get_stories"))
+    return render_template("add_story.html")
+
+
+@app.route("/edit_story/<stories_id>", methods=["GET", "POST"])
+def edit_story(stories_id):
+    story = mongo.db.stories.find_one({"_id": ObjectId(stories_id)})
+    return render_template("stories.html", story=story)
 
 
 @app.route("/add_joke", methods=["GET", "POST"])
