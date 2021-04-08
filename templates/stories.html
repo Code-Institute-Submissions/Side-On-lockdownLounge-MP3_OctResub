@@ -5,18 +5,11 @@
     {% for story in stories %}
     <li>
         <div class="collapsible-header">
-            <div class="col s3">
-                    <i class="fas fa-caret-down"></i>
-                    <a href="" class="btn-small green accent-4">Done</a>
-                    <a href="{{ url_for('get_stories', stories_id=stories._id) }}" class="btn-small light-blue lighten-1">Edit</a>
-                </div>
-            <div class="col s9">
                 <strong>{{ story.story_title }}</strong>
             </div>
             <div class="collapsible-body"><span>{{ story.story_content }}</span>
                 <p>Created by: {{ story.created_by }}</p>
             </div>
-        </div>
     </li>
     {% endfor %}
 </ul>
