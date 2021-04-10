@@ -1,19 +1,17 @@
 {% extends "base.html" %} {% block content %}
 
 <ul class="collapsible">
-  {% for joke in jokes %}
-  <li>
-    <div class="collapsible-header">
-      <i class="fas fa-caret-down"></i>
-      <strong>{{ joke.joke_title }}</strong>
-    </div>
-    <div class="collapsible-body">
-      <span>{{ joke.joke_content }}</span>
-      <p>Created by: {{ joke.created_by }}</p>
-    </div>
-  </li>
+    {% for joke in jokes %}
+    <li>
+        <div class="collapsible-header">
+                <strong>{{ joke.joke_title }}</strong>
+            </div>
+            <div class="collapsible-body"><span>{{ joke.joke_content }}</span>
+                <p>Created by: {{ joke.created_by }}</p>
+            </div>
+    </li>
+    {% endfor %}
 </ul>
-{% endfor %} 
 {% if session.user %}
     <a href="{{ url_for('add_joke') }}" class="waves-effect waves-light btn">Add a Joke!</a>
 {% endif %} 
