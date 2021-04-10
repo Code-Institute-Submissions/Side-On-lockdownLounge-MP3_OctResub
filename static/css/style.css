@@ -14,3 +14,8 @@
     margin-bottom: 0;
     z-index: 997;
 }
+
+.btn-floating {
+    text-align: center;
+    font-size: 18px;
+}
