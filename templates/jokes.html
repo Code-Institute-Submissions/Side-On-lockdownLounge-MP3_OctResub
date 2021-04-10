@@ -13,4 +13,8 @@
     </div>
   </li>
 </ul>
-{% endfor %} {% endblock %}
+{% endfor %} 
+{% if session.user %}
+    <a href="{{ url_for('add_joke') }}" class="waves-effect waves-light btn">Add a Joke!</a>
+{% endif %} 
+{% endblock %}
