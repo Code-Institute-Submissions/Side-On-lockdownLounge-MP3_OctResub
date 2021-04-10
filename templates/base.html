@@ -38,16 +38,19 @@
           <li><a href="{{ url_for('index') }}">Home</a></li>
           <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
           <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
-          <li><a href="{{ url_for('add_story') }}">Add A Story</a></li>
-          <li><a href="{{ url_for('add_joke') }}">Add A Joke</a></li>
-          <li>
-            <a href="{{ url_for('profile', username=session['user']) }}"
+          {% if session.user %}
+            <li><a href="{{ url_for('add_story') }}">Add A Story</a></li>
+            <li><a href="{{ url_for('add_joke') }}">Add A Joke</a></li>
+            <li>
+                <a href="{{ url_for('profile', username=session['user']) }}"
               >Your Profile</a
             >
           </li>
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          {% else %}
           <li><a href="{{ url_for('login') }}">Log In</a></li>
           <li><a href="{{ url_for('register') }}">Register</a></li>
+          {% endif %}
           <li>
             <form>
               <div class="input-field">
@@ -55,7 +58,6 @@
                 <label class="label-icon" for="search"
                   ><i class="fas fa-search"></i
                 ></label>
-                <i class="fas fa-times"></i>
               </div>
             </form>
           </li>
@@ -64,26 +66,25 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
-      <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
-
-      <li>
-        <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-      </li>
-      <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-
-      <li><a href="{{ url_for('login') }}">Log In</a></li>
-      <li><a href="{{ url_for('register') }}">Register</a></li>
-
-      <li>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
+        <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
+        <li><a href="{{ url_for('add_story') }}">Add A Story</a></li>
+        <li><a href="{{ url_for('add_joke') }}">Add A Joke</a></li>
+        <li>
+          <a href="{{ url_for('profile', username=session['user']) }}"
+            >Your Profile</a
+          >
+        </li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        <li><a href="{{ url_for('login') }}">Log In</a></li>
+        <li><a href="{{ url_for('register') }}">Register</a></li>
         <form>
           <div class="input-field">
             <input id="search" type="search" required />
             <label class="label-icon" for="search"
               ><i class="fas fa-search"></i
             ></label>
-            <i class="fas fa-times"></i>
           </div>
         </form>
       </li>
