@@ -108,7 +108,7 @@ def add_story():
             "created_by": session["user"]
         }
         mongo.db.stories.insert_one(story)
-        flash("Task Successfully Added")
+        flash("Story Successfully Added")
         return redirect(url_for("get_stories"))
 
     return render_template("add_story.html")
