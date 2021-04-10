@@ -132,6 +132,8 @@ def add_joke():
         flash("Your joke has been added!")
         return redirect(url_for("get_jokes"))
 
+    return render_template("add_joke.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
