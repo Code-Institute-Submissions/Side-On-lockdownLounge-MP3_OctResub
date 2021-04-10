@@ -28,12 +28,8 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="{{ url_for('index') }}" class="brand-logo center"
-          >The Lockdown Lounge</a
-        >
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="fas fa-bars"></i
-        ></a>
+        <a href="{{ url_for('index') }}" class="brand-logo left">LL</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="{{ url_for('index') }}">Home</a></li>
           <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
@@ -45,12 +41,12 @@
                 <a href="{{ url_for('profile', username=session['user']) }}"
               >Your Profile</a
             >
-          </li>
-          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-          {% else %}
-          <li><a href="{{ url_for('login') }}">Log In</a></li>
-          <li><a href="{{ url_for('register') }}">Register</a></li>
-          {% endif %}
+            </li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Log In</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
           <li>
             <form>
               <div class="input-field">
