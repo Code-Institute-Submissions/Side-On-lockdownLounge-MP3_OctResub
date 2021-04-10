@@ -114,10 +114,10 @@ def add_story():
     return render_template("add_story.html")
 
 
-@app.route("/edit_story/<stories_id>", methods=["GET", "POST"])
-def edit_story(stories_id):
-    story = mongo.db.stories.find_one({"_id": ObjectId(stories_id)})
-    return render_template("stories.html", story=story)
+@app.route("/edit_story/<story_id>", methods=["GET", "POST"])
+def edit_story(story_id):
+    story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
+    return render_template("edit_story.html", story=story)
 
 
 @app.route("/add_joke", methods=["GET", "POST"])

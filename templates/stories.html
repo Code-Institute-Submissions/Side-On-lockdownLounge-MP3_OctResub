@@ -11,28 +11,13 @@
         <p>Created by: {{ story.created_by }}</p>
         
         {% if story.created_by == session.user %}
-        <!--
-        <div class="fixed-action-btn right">
-          <a class="btn-floating btn-medium green">
-            <i class="fas fa-plus"></i>
-          </a>
-          <ul>
-            <li>
-              <a href="" class="btn-floating red fas fa-times"></a>
-            </li>
-            <li>
-              <a href="" class="btn-floating orange far fa-edit"></a>
-            </li>
-          </ul>
-        </div>
-      -->
       <div class="fixed-action-btn click-to-toggle direction-top right direction-left">
         <a class="btn-floating btn-large green">
           <i class="fas fa-plus"></i>
         </a>
         <ul>
           <li>
-            <a class="btn-floating orange" style="opacity: 1; transform: scale(1) translateY(0px) translateX(0px);">
+            <a href="{{ url_for('edit_story', story_id=story._id) }}" class="btn-floating orange" style="opacity: 1; transform: scale(1) translateY(0px) translateX(0px);">
               <i class="far fa-edit"></i>
             </a>
           </li>
