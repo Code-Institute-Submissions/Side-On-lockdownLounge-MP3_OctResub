@@ -18,11 +18,17 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
 @app.route("/get_stories")
 def get_stories():
     stories = list(mongo.db.stories.find())
     return render_template("stories.html", stories=stories)
+
+
+@app.route("/get_user_content")
+def get_user_content():
+    stories = list(mongo.db.stories.find())
+    jokes = list(mongo.db.jokes.find())
+    return render_template("profile.html", stories=stories, jokes=jokes)
 
 
 @app.route("/get_jokes")
@@ -54,6 +60,7 @@ def register():
     return render_template("register.html")
 
 
+@app.route("/")
 @app.route("/index")
 def index():
     return render_template("index.html")
