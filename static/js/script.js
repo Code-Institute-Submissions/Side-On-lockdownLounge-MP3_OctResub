@@ -2,7 +2,7 @@
     $('.sidenav').sidenav();
     $('.datepicker').datepicker();
     $('.collapsible').collapsible();
-        $('.tabs').tabs();
+    $('.tabs').tabs();
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -11,8 +11,5 @@
       direction: 'left',
       hoverEnabled: false
     });
-  });
-  $(document).ready(function(){
-
   });
         
