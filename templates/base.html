@@ -26,9 +26,9 @@
    <body>
       <nav>
          <div class="nav-wrapper">
-            <a href="{{ url_for('index') }}" class="brand-logo left">LL</a>
+            <a href="{{ url_for('index') }}" class="brand-logo s12">Lockdown Lounge</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-            <ul class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down">  
                <li><a href="{{ url_for('index') }}">Home</a></li>
                <li><a href="{{ url_for('get_stories') }}">Stories</a></li>
                <li><a href="{{ url_for('get_jokes') }}">Jokes</a></li>
@@ -45,19 +45,6 @@
                <li><a href="{{ url_for('login') }}">Log In</a></li>
                <li><a href="{{ url_for('register') }}">Register</a></li>
                {% endif %}
-               <li>
-                  <form action="{{ url_for('search') }}" method="POST" class="col s12">
-                     <div class="input-field">
-                        <input type="text" name="search" id="search" minlength="3" class="validate" required>
-                        <label for="search">Search Stories</label>
-                     </div>
-                  </form>
-               <li><button type="submit" class="light-blue darken-1 btn text-shadow">
-                  Search
-                  </button>
-               </li>
-               <li><a href="{{ url_for('get_stories') }}" class="red btn text-shadow">Reset</a></li>
-               </li>
             </ul>
          </div>
       </nav>
@@ -84,7 +71,6 @@
                   ></label>
             </div>
          </form>
-         </li>
       </ul>
       <section>
          <!--flash messages-->
