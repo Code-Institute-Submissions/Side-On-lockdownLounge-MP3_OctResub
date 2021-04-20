@@ -1,3 +1,15 @@
+body {
+    background-color: #f4eee8;
+}
+.nav-wrapper {
+    background-color: #325288;
+}
+
+.card {
+    background-color: white;
+    color: black;
+}
+
 .sign-in-button {
     background-color: #ee6e73;
 }
