@@ -123,8 +123,24 @@ def add_story():
 
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
 def edit_story(story_id):
+    if request.method == "POST":
+        submit = {
+            "story_title": request.form.get("story_title"),
+            "story_content": request.form.get("story_content"),
+            "created_by": session["user"]
+        }
+        mongo.db.stories.update({"_id": ObjectId(story_id)}, submit)
+        flash("Story Successfully Edited")
+
     story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
     return render_template("edit_story.html", story=story)
+
+
+@app.route("/delete_story/<story_id>")
+def delete_story(story_id):
+    mongo.db.stories.remove({"_id": ObjectId(story_id)})
+    flash("Story Deleted")
+    return redirect(url_for("get_stories"))
 
 
 @app.route("/add_joke", methods=["GET", "POST"])

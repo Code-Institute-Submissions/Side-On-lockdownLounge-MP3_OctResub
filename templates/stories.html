@@ -1,10 +1,11 @@
 {% extends "base.html" %} {% block content %}
 
+
 <div class="row">
-  <div class="col s6">
-    <form action="{{ url_for('search') }}" method="POST">
-      <div class="input-field">
-        <input
+	<div class="col s6">
+		<form action="{{ url_for('search') }}" method="POST">
+			<div class="input-field">
+				<input
           type="text"
           name="search"
           id="search"
@@ -12,42 +13,43 @@
           class="validate"
           required
         />
-        <label for="search">Search Stories</label>
-      </div>
-    </form>
-    <div class="col">
-      <button type="submit" class="light-blue darken-1 btn text-shadow">
+				<label for="search">Search Stories</label>
+			</div>
+		</form>
+		<div class="col">
+			<button type="submit" class="light-blue darken-1 btn text-shadow">
         Search
       </button>
-    </div>
-    <div class="col">
-      <a href="{{ url_for('get_stories') }}" class="red btn text-shadow"
+		</div>
+		<div class="col">
+			<a href="{{ url_for('get_stories') }}" class="red btn text-shadow"
         >Reset</a
       >
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
-
 <div class="row">
   {% for story in stories %}
-  <div class="col s12">
-    <div class="card hoverable">
-      <div class="card-content">
-        <span class="card-title">{{ story.story_title }}</span>
-        <p>{{ story.story_content }}</p>
-        <br />
-        <p>Created by: {{ story.created_by }}</p>
+  
+	<div class="col s12">
+		<div class="card hoverable">
+			<div class="card-content">
+				<span class="card-title">{{ story.story_title }}</span>
+				<p>{{ story.story_content }}</p>
+				<br />
+				<p>Created by: {{ story.created_by }}</p>
 
-        {% if story.created_by == session.user %}
-        <div
+        {% if story.created_by|lower == session.user|lower %}
+        
+				<div
           class="fixed-action-btn click-to-toggle direction-top right direction-left"
         >
-          <a class="btn-floating btn-large green">
-            <i class="fas fa-plus"></i>
-          </a>
-          <ul>
-            <li>
-              <a
+					<a class="btn-floating btn-large green">
+						<i class="fas fa-plus"></i>
+					</a>
+					<ul>
+						<li>
+							<a
                 href="{{ url_for('edit_story', story_id=story._id) }}"
                 class="btn-floating orange"
                 style="
@@ -55,30 +57,34 @@
                   transform: scale(1) translateY(0px) translateX(0px);
                 "
               >
-                <i class="far fa-edit"></i>
-              </a>
-            </li>
-            <li>
-              <a
+								<i class="far fa-edit"></i>
+							</a>
+						</li>
+						<li>
+							<a
+                href="{{ url_for('delete_story', story_id=story._id) }}"
                 class="btn-floating red"
                 style="
                   opacity: 1;
                   transform: scale(1) translateY(0px) translateX(0px);
                 "
               >
-                <i class="fas fa-times"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
+								<i class="fas fa-times"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
         {% endif %}
-      </div>
-    </div>
-  </div>
+      
+			</div>
+		</div>
+	</div>
 
   {% endfor %}
+
 </div>
 {% if session.user %}
+
 <a href="{{ url_for('add_story') }}" class="waves-effect waves-light btn"
   >Add a story!</a
 >
