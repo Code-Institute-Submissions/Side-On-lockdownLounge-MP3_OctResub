@@ -76,13 +76,15 @@
         {% endif %}
       </div>
     </div>
-  </div>  <div id="modal1" class="modal">
+  </div>
+  <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Delete?!</h4>
       <p>Are you sure?</p>
     </div>
     <div class="modal-footer">
-      <a href="{{ url_for('delete_story', story_id=story._id) }}">Confirm </a>
+      <a href="{{ url_for('delete_story', story_id=story._id) }}" class="red btn text-shadow">Delete </a>
+      <a href="{{ url_for('get_stories') }}" class="blue btn text-shadow">Cancel</a>
     </div>
   </div>
 
