@@ -3,6 +3,7 @@
     $('.datepicker').datepicker();
     $('.collapsible').collapsible();
     $('.tabs').tabs();
+    $('.modal').modal();
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -12,4 +13,3 @@
       hoverEnabled: false
     });
   });
-        
