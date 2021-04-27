@@ -49,3 +49,7 @@ nav .brand-logo {
     min-width: 200px;
     display: inline-block;
 }
+
+.inline-block {
+    display: inline-block;
+}
