@@ -165,6 +165,18 @@ def search():
     return render_template("stories.html", stories=stories)
 
 
+@app.route("/add_story_like", methods=["GET", "POST"])
+def add_story_like():
+    if request.method == "POST":
+        story_like = {
+            "story_likes": request.form.get("story_likes")
+        }
+        mongo.db.stories.update(story_like + 1)
+        return redirect(url_for("get_stories"))
+
+    return render_template("add_story_like")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
