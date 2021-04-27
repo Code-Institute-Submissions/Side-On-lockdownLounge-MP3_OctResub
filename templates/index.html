@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>This is the index page</h1>
+<h1>Welcome to the Lockdown Lounge!</h1>
+
+<p>Here you can relax, share some stories or jokes about your time in lockdown</p>
+
+<p>Head over to the <a href="{{ url_for('get_stories') }}">area</a> to share some ridicolous stories you've been through in your Lockdown time</p> 
+
+<p>Run yourself over to the <a href="{{ url_for('get_stories') }}">jokes</a> section to give us all a laugh, or not</p>
+
+<p>If you'd like to add some content to either of the pages, you'll need to create a user account first. Head <a href="{{ url_for('register') }}">here</a> to do that. Don't worry we only need your email address, and we promise not to send any annoying emails.</p>
+
 
 {% endblock %}
