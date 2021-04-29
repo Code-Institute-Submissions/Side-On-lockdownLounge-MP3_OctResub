@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="row">
-  <form action="{{ url_for('search_stories') }}" method="POST">
+  <form class="center" action="{{ url_for('search_stories') }}" method="POST">
     <div class="search-bar center" style="width: 50%">
       <input
         type="text"
@@ -70,8 +70,8 @@
                 "
                 onclick="return confirm('Are you sure you want to delete this item?');"
               >
-                <i class="far fa-edit"></i>
-              </a>
+              <i class="fas fa-times"></i>
+                          </a>
             </li>
           </ul>
         </div>
