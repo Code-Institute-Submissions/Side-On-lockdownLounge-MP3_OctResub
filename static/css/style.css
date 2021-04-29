@@ -57,3 +57,24 @@ nav .brand-logo {
 .add-joke {
   width: 100%;
 }
+
+.brand-logo-small-screen {
+  visibility: hidden;
+}
+
+.brand-logo {
+  visibility: visible;
+}
+
+@media screen and (max-width: 550px) {
+  .brand-logo {
+    visibility: hidden;
+  }
+
+  .brand-logo-small-screen {
+    visibility: visible;
+    left: 50%;
+    position: absolute;
+    font-size: 2.1rem;
+  }
+}
