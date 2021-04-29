@@ -1,8 +1,8 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="row">
-  <form action="{{ url_for('search') }}" method="POST">
-    <div class="search-bar center" style="width: 50%;">
+  <form action="{{ url_for('search_stories') }}" method="POST">
+    <div class="search-bar center" style="width: 50%">
       <input
         type="text"
         name="search"
@@ -15,10 +15,17 @@
     </div>
 
     <div class="search-bar">
-      <button type="submit" class="light-blue darken-1 search-btn btn text-shadow">
+      <button
+        type="submit"
+        class="light-blue darken-1 search-btn btn text-shadow"
+      >
         Search
       </button>
-      <a href="{{ url_for('get_stories') }}" class="red search-btn btn text-shadow">Reset</a>
+      <a
+        href="{{ url_for('get_stories') }}"
+        class="red search-btn btn text-shadow"
+        >Reset</a
+      >
     </div>
   </form>
 </div>
@@ -32,8 +39,6 @@
         <p>{{ story.story_content }}</p>
         <br />
         <p>Created by: {{ story.created_by }}</p>
-        <div><a href="" method="POST"  class="inline-block" action="{{ url_for('add_story_like') }}" ><i class="far fa-thumbs-up"></i></a><p class="inline-block">{{ story.story_likes }}</p></div>
-
         {% if story.created_by|lower == session.user|lower %}
 
         <div
