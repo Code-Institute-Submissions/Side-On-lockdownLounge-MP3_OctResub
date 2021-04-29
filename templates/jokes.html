@@ -1,6 +1,35 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="row">
+  <form action="{{ url_for('search_jokes') }}" method="POST">
+    <div class="search-bar center" style="width: 50%">
+      <input
+        type="text"
+        name="search"
+        id="search"
+        minlength="3"
+        class="validate"
+        required
+        placeholder="Search jokes"
+      />
+    </div>
+
+    <div class="search-bar">
+      <button
+        type="submit"
+        class="light-blue darken-1 search-btn btn text-shadow"
+      >
+        Search
+      </button>
+      <a
+        href="{{ url_for('get_jokes') }}"
+        class="red search-btn btn text-shadow"
+        >Reset</a
+      >
+    </div>
+  </form>
+</div>
+<div class="row">
     
     {% for joke in jokes %}
     <div class="col s12">
