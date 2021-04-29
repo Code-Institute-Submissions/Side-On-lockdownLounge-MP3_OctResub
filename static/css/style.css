@@ -1,55 +1,59 @@
 body {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 .nav-wrapper {
-    background-color: #393e46;
+  background-color: #393e46;
 }
 
 nav .brand-logo {
-    position: absolute;
-    color: #fff;
-    display: inline-block;
-    font-size: 2.1rem;
-    padding-left: 10px;
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding-left: 10px;
 }
 
 .card {
-    background-color: #00adb5;
-    color: black;
+  background-color: #00adb5;
+  color: black;
 }
 
 .sign-in-button {
-    background-color: #ee6e73;
+  background-color: #ee6e73;
 }
 
 .flashes h4 {
-    line-height: 2;
+  line-height: 2;
 }
 
 .fixed-action-btn {
-    position: inherit;
-    right: 23px;
-    bottom: 23px;
-    padding-top: 15px;
-    margin-bottom: 0;
-    z-index: 997;
+  position: inherit;
+  right: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 997;
 }
 
 .btn-floating {
-    text-align: center;
-    font-size: 18px;
+  text-align: center;
+  font-size: 18px;
 }
 
 .search-btn {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .search-bar {
-    min-width: 200px;
-    display: inline-block;
+  min-width: 200px;
+  display: inline-block;
 }
 
 .inline-block {
-    display: inline-block;
+  display: inline-block;
+}
+
+.add-joke {
+  width: 100%;
 }
