@@ -158,23 +158,18 @@ def add_joke():
     return render_template("add_joke.html")
 
 
-@app.route("/search", methods=["GET", "POST"])
-def search():
+@app.route("/search_stories", methods=["GET", "POST"])
+def search_stories():
     query = request.form.get("search")
     stories = list(mongo.db.stories.find({"$text": {"$search": query}}))
     return render_template("stories.html", stories=stories)
 
 
-@app.route("/add_story_like", methods=["GET", "POST"])
-def add_story_like():
-    if request.method == "POST":
-        story_like = {
-            "story_likes": request.form.get("story_likes")
-        }
-        mongo.db.stories.update(story_like + 1)
-        return redirect(url_for("get_stories"))
-
-    return render_template("add_story_like")
+@app.route("/search_jokes", methods=["GET", "POST"])
+def search_jokes():
+    query = request.form.get("search")
+    jokes = list(mongo.db.jokes.find({"$text": {"$search": query}}))
+    return render_template("jokes.html", jokes=jokes)
 
 
 if __name__ == "__main__":
