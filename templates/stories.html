@@ -31,7 +31,7 @@
 </div>
 {% if session.user %}
 <div class="row center">
-  <button href="{{ url_for('add_story') }}" class="btn">Add a story!</button>
+  <a href="{{ url_for('add_story') }}" class="btn">Add a story!</a>
 </div>
 {% for story in stories %}
 <a href=" {{ url_for('story', story_id=story._id) }}">
