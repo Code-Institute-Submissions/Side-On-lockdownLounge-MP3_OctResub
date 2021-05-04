@@ -29,21 +29,25 @@
     </div>
   </form>
 </div>
+{% if session.user %}
+<div class="row center">
+<button href="{{ url_for('add_story') }}" class="btn"
+  >Add a story!</button
+></div>
 {% for story in stories %}
-<a href=" {{ url_for('story', story_id=story._id) }}">
-<div class="row">
+<div class="row center">
 
-  <div class="col s12">
-    <div class="card hoverable">
+  <a class="" href=" {{ url_for('story', story_id=story._id) }}">
+  
+    <div class="card s12 m8 l4">
       <div class="card-content">
-        <span class="card-title">{{ story.story_title }}</span>
-        <p>{{ story.story_content }}</p>
+        <p class="left created-by">Created by: {{ story.created_by }}</p>
+        <h3>{{ story.story_title }}</h3>
         <br />
-        <p>Created by: {{ story.created_by }}</p>
         {% if story.created_by|lower == session.user|lower %}
 
         <div
-          class="fixed-action-btn click-to-toggle direction-top right direction-left"
+          class="fixed-action-btn click-to-toggle right direction-left"
         >
           <a class="btn-floating btn-large green">
             <i class="fas fa-plus"></i>
@@ -79,15 +83,11 @@
         {% endif %}
       </div>
     </div>
-  </div>
+  
 
   {% endfor %}
-</div>
 </a>
-{% if session.user %}
+</div>
 
-<a href="{{ url_for('add_story') }}" class="waves-effect waves-light btn"
-  >Add a story!</a
->
 
 {% endif %} {% endblock %}
