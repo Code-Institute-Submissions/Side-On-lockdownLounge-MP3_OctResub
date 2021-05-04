@@ -66,6 +66,12 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/story/<story_id>")
+def story(story_id):
+    story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
+    return render_template("story.html", story=story)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":

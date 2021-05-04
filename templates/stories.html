@@ -29,8 +29,9 @@
     </div>
   </form>
 </div>
+{% for story in stories %}
+<a href=" {{ url_for('story', story_id=story._id) }}">
 <div class="row">
-  {% for story in stories %}
 
   <div class="col s12">
     <div class="card hoverable">
@@ -82,6 +83,7 @@
 
   {% endfor %}
 </div>
+</a>
 {% if session.user %}
 
 <a href="{{ url_for('add_story') }}" class="waves-effect waves-light btn"
