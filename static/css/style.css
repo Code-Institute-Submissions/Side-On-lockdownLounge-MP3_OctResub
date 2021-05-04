@@ -2,6 +2,11 @@ body {
   background-color: #eee;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .nav-wrapper {
   background-color: #393e46;
 }
@@ -17,6 +22,16 @@ nav .brand-logo {
 .card {
   background-color: #00adb5;
   color: black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.created-by {
+  text-align: left;
+  font-size: smaller;
+  position: absolute;
+  left: 5px;
+  top: 5px;
 }
 
 .sign-in-button {
