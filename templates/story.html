@@ -7,10 +7,14 @@
           <p>{{ story.story_content }}</p>
           <br />
           <p>Created by: {{ story.created_by }}</p>
-          {% if story.created_by|lower == session.user|lower %}
-  
-          {% endif %}
     </div>
   <a href="{{ url_for('add_story_comment')}}" class="btn">Add a Comment</a>
   </div>
+
+  {% for comment in story_comment %}
+
+  <p>{{ comment.story_comment }}</p>
+
+  {% endfor %}
+  
 {% endblock %}
