@@ -133,15 +133,16 @@ def add_story():
     return render_template("add_story.html")
 
 
-@app.route("/add_story_comment", methods=["GET", "POST"])
+@app.route("/add_story_comment/", methods=["GET", "POST"])
 def add_story_comment():
     if request.method == "POST":
         story_comment = {
+            "story_id": mongo.db.stories.get("_id"),
             "story_comment": request.form.get("story_comment"),
             "created_by": session["user"]
         }
         mongo.db.story_comment.insert_one(story_comment)
-        flash("Story Successfully Added")
+        flash("Comment Successfully Added")
         return redirect(url_for("get_stories"))
 
     return render_template("add_story_comment.html")
