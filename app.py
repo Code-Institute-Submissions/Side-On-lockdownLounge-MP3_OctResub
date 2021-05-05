@@ -74,7 +74,7 @@ def story(story_id):
 
 @app.route("/joke/<joke_id>")
 def joke(joke_id):
-    joke = mongo.db.stories.find_one({"_id": ObjectId(joke_id)})
+    joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
     return render_template("joke.html", joke=joke)
 
 

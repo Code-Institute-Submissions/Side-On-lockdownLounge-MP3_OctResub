@@ -6,7 +6,7 @@
           <h1>{{ joke.joke_title }}</h1>
           <p>{{ joke.joke_content }}</p>
           <br />
-          <p>Created by: {{ story.created_by }}</p>
+          <p>Created by: {{ joke.created_by }}</p>
     </div>
   <a href="{{ url_for('add_story_comment')}}" class="btn">Add a Comment</a>
   </div>
