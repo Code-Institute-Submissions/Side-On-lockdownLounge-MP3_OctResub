@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>Edit your joke</h3>
+<div class="row">
+    <div class="col s12 m5">
+        <div class="card-panel">
+            <form method="POST" action="{{ url_for('edit_joke', joke_id=joke._id) }}">
+                <div class="row">
+                    <form class="col s12">
+                        <!--story title-->
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" name="joke_title" id="joke_title" class="validate" minlength="5"
+                                    maxlength="15" value="{{ joke.joke_title }}" required>
+                                <label for="story_title">Joke Title</label>
+
+                            </div>
+                        </div>
+                        <!-- story content-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="fas fa-book-open prefix"></i>
+                                <input type="text" name="joke_content" id="joke_content" class="validate"
+                                    minlength="5" maxlength="300" data-length="15" value="{{ joke.joke_content }}" required>
+                                <label for="joke_content">Joke Content</label>
+                                
+                                <a href="{{ url_for('get_jokes') }}" class="col s6 btn-large red offset-m3">Cancel</a>
+                                <!--submit button -->
+                                <button class="col s6 btn-large green offset-m3" type="submit">Edit!
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
