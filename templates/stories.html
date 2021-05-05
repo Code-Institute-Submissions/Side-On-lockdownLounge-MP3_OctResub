@@ -33,10 +33,14 @@
 <div class="row center">
   <a href="{{ url_for('add_story') }}" class="btn">Add a story!</a>
 </div>
+{% endif %}
+
 {% for story in stories %}
-<a href=" {{ url_for('story', story_id=story._id) }}">
   <div class="row center">
-    <div class="card s12 m8 l4">
+    
+<a href=" {{ url_for('story', story_id=story._id) }}">
+    <div class="s12">
+      <div class="card">
       <div class="card-content">
         <p class="left created-by">Created by: {{ story.created_by }}</p>
         <h3>{{ story.story_title }}</h3>
@@ -75,10 +79,9 @@
         </ul>
       </div>
       {% endif %}
-    </div>
+    </div></div>
 
     {% endfor %}
+  </a>
   </div>
-</a>
-
-{% endif %} {% endblock %}
+{% endblock %}
