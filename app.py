@@ -69,7 +69,9 @@ def index():
 @app.route("/story/<story_id>")
 def story(story_id):
     story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
-    return render_template("story.html", story=story)
+    story_comment = list(mongo.db.story_comment.find())
+    return render_template(
+        "story.html", story=story, story_comment=story_comment)
 
 
 @app.route("/joke/<joke_id>")
@@ -144,7 +146,6 @@ def add_story_comment(story_id):
         mongo.db.story_comment.insert_one(story_comment)
         flash("Comment Successfully Added")
         return redirect(url_for("get_stories"))
-
     return render_template("add_story_comment.html")
 
 

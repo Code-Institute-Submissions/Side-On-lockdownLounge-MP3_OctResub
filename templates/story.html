@@ -5,14 +5,21 @@
     <p>{{ story.story_content }}</p>
     <br />
     <p>Created by: {{ story.created_by }}</p>
-    <p></p>
   </div>
 </div>
 
+{% for comment in story_comment %}
+{% if comment.story_id == comment.story_id %}
+<div class="card">
+  <p>{{ comment.story_id }}</p>
+  <p>{{ comment.story_comment }}</p>
+  <p>{{ comment.created_by }}</p>
+</div>
+{% endif %}
+{% endfor %}
 <form method="POST" action="{{ url_for('add_story_comment', story_id=story._id) }}">
   <div class="row">
-    <form class="col s12">
-      <!--story title-->
+      <!--story comment-->
       <div class="row">
         <div class="input-field col s6">
           <input
@@ -35,7 +42,8 @@
             Submit!
             <i class="fas fa-sign-in-alt"></i>
           </button>
-</form>
 </div>
+</form>
+
 
 {% endblock %}
