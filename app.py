@@ -69,7 +69,7 @@ def index():
 @app.route("/story/<story_id>")
 def story(story_id):
     story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
-    story_comment = list(mongo.db.story_comment.find())
+    story_comment = list(mongo.db.story_comment.find({'story_id':story})
     return render_template(
         "story.html", story=story, story_comment=story_comment)
 
