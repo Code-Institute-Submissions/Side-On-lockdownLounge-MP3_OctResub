@@ -5,14 +5,37 @@
     <p>{{ story.story_content }}</p>
     <br />
     <p>Created by: {{ story.created_by }}</p>
+    <p></p>
   </div>
-  <a href="{{ url_for('add_story_comment',  story_id=story._id)}}" class="btn">Add a Comment</a>
 </div>
 
-{% for comments in story_comment %}
+<form method="POST" action="{{ url_for('add_story_comment', story_id=story._id) }}">
+  <div class="row">
+    <form class="col s12">
+      <!--story title-->
+      <div class="row">
+        <div class="input-field col s6">
+          <input
+            type="text"
+            name="story_comment"
+            id="story_comment"
+            class="validate"
+            minlength="5"
+            maxlength="50"
+            required
+          />
+          <label for="story_comment">Story Comment</label>
+        </div>
+      </div>
+          <!--submit button -->
+          <button
+            class="col s6 btn-large sign-in-button offset-m3"
+            type="submit"
+          >
+            Submit!
+            <i class="fas fa-sign-in-alt"></i>
+          </button>
+</form>
+</div>
 
-<p>{{ comments.story_comment }}</p>
-<p>{{ comments.created_by }}</p>
-
-{% endfor %}
 {% endblock %}

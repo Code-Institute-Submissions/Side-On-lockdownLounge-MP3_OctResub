@@ -133,11 +133,11 @@ def add_story():
     return render_template("add_story.html")
 
 
-@app.route("/add_story_comment/", methods=["GET", "POST"])
-def add_story_comment():
+@app.route("/add_story_comment/<story_id>", methods=["GET", "POST"])
+def add_story_comment(story_id):
     if request.method == "POST":
         story_comment = {
-            "story_id": mongo.db.stories.get("_id"),
+            "story_id": mongo.db.stories.find_one({"_id": ObjectId(story_id)}),
             "story_comment": request.form.get("story_comment"),
             "created_by": session["user"]
         }
