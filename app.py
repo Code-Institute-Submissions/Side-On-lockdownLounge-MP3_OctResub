@@ -239,6 +239,13 @@ def search_jokes():
     return render_template("jokes.html", jokes=jokes)
 
 
+@app.route("/delete_story_comment/<story_comment_id>")
+def delete_story_comment(story_comment_id):
+    mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
+    flash("Story Comment Deleted")
+    return redirect(url_for("get_stories"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
