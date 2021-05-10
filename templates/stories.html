@@ -44,8 +44,8 @@
       <div class="card-content">
         <p class="left created-by">Created by: {{ story.created_by }}</p>
         <h3>{{ story.story_title }}</h3>
-        {% if story.created_by|lower == session.user|lower %}
       </div>
+      {% if story.created_by|lower == session.user|lower %}
       <div class="fixed-action-btn click-to-toggle right direction-left">
         <a class="btn-floating btn-large green">
           <i class="fas fa-plus"></i>
@@ -79,10 +79,10 @@
         </ul>
       </div>
  
+      {% endif %}
     </div></div>
   </a>
   </div>
   
-  {% endif %}
   {% endfor %}
 {% endblock %}

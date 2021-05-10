@@ -36,8 +36,11 @@
 ></div>
 {% endif %} 
 
-{% for joke in jokes %}
+  
 
+
+  {% for joke in jokes %}
+  
 <div class="row center">   
 <a href=" {{ url_for('joke', joke_id=joke._id) }}">
     <div class="s12">
@@ -45,8 +48,8 @@
       <div class="card-content">
         <p class="left created-by">Created by: {{ joke.created_by }}</p>
         <h3>{{ joke.joke_title }}</h3>
-        {% if joke.created_by|lower == session.user|lower %}
       </div>
+      {% if joke.created_by|lower == session.user|lower %}
       <div class="fixed-action-btn click-to-toggle right direction-left">
         <a class="btn-floating btn-large green">
           <i class="fas fa-plus"></i>
@@ -80,10 +83,13 @@
         </ul>
       </div>
  
-    </div></div>
-  </a>
-  </div>
+{% endif %}
+    </div>
   
-  {% endif %}
-  {% endfor %}
+  </div>
+  </a>
+</div>
+
+{% endfor %}
+  
 {% endblock %}
