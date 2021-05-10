@@ -9,15 +9,16 @@
 </div>
 
 {% for comment in story_comment %}
-<div class="card">
+<div class="comment">
   <p>{{ comment.story_comment }}</p>
-  <p>{{ comment.created_by }}</p>
+  <p>user commented: {{ comment.created_by }}</p>
 </div>
 {% endfor %}
+<div class="center">
 <form method="POST" action="{{ url_for('add_story_comment', story_id=story._id) }}">
-  <div class="row">
+  <div class="row ">
       <!--story comment-->
-      <div class="row">
+      <div class="row ">
         <div class="input-field col s6">
           <input
             type="text"
@@ -41,6 +42,6 @@
           </button>
 </div>
 </form>
-
+</div>
 
 {% endblock %}
