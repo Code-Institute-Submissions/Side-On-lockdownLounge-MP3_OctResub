@@ -98,3 +98,11 @@ nav .brand-logo {
 form {
     padding-top: 10px;
 }
+
+.comment {
+  background-color: grey;
+  color: white;
+  border: solid black;
+  margin-top: 15px;
+  padding-left: 10px;
+}
