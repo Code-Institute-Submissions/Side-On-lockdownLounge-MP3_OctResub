@@ -1,20 +1,46 @@
-{% extends "base.html" %} 
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="row">
-
-    <div class="col s12">
-          <h1>{{ joke.joke_title }}</h1>
-          <p>{{ joke.joke_content }}</p>
-          <br />
-          <p>Created by: {{ joke.created_by }}</p>
-    </div>
-  <a href="{{ url_for('add_story_comment')}}" class="btn">Add a Comment</a>
+  <div class="col s12">
+    <h1>{{ joke.joke_title }}</h1>
+    <p>{{ joke.joke_content }}</p>
+    <br />
+    <p>Created by: {{ joke.created_by }}</p>
   </div>
+</div>
 
-  {% for comment in story_comment %}
+{% for comment in joke_comment %}
+<div class="card">
+  <p>{{ comment.joke_comment }}</p>
+  <p>{{ comment.created_by }}</p>
+</div>
+{% endfor %}
+<form method="POST" action="{{ url_for('add_joke_comment', joke_id=joke._id) }}">
+  <div class="row">
+      <!--story comment-->
+      <div class="row">
+        <div class="input-field col s6">
+          <input
+            type="text"
+            name="joke_comment"
+            id="joke_comment"
+            class="validate"
+            minlength="5"
+            maxlength="50"
+            required
+          />
+          <label for="joke_comment">Joke Comment</label>
+        </div>
+      </div>
+          <!--submit button -->
+          <button
+            class="col s6 btn-large sign-in-button offset-m3"
+            type="submit"
+          >
+            Submit!
+            <i class="fas fa-sign-in-alt"></i>
+          </button>
+</div>
+</form>
 
-  <p>{{ comment.story_comment }}</p>
 
-  {% endfor %}
-  
 {% endblock %}
