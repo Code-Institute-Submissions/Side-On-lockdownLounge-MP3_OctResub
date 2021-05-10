@@ -78,7 +78,9 @@ def story(story_id):
 @app.route("/joke/<joke_id>")
 def joke(joke_id):
     joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
-    return render_template("joke.html", joke=joke)
+    joke_comment = list(
+        mongo.db.joke_comment.find({'joke_id': joke}))
+    return render_template("joke.html", joke=joke, joke_comment=joke_comment)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -200,6 +202,20 @@ def edit_joke(joke_id):
 
     joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
     return render_template("edit_joke.html", joke=joke)
+
+
+@app.route("/add_joke_comment/<joke_id>", methods=["GET", "POST"])
+def add_joke_comment(joke_id):
+    if request.method == "POST":
+        joke_comment = {
+            "joke_id": mongo.db.jokes.find_one({"_id": ObjectId(joke_id)}),
+            "joke_comment": request.form.get("joke_comment"),
+            "created_by": session["user"]
+        }
+        mongo.db.joke_comment.insert_one(joke_comment)
+        flash("Comment Successfully Added")
+        return redirect(url_for("get_jokes"))
+    return render_template("add_joke_comment.html")
 
 
 @app.route("/delete_joke/<joke_id>")
