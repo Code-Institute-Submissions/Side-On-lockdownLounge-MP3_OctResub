@@ -40,22 +40,49 @@ This is after the user has signed into their account. They are then shown the Pr
 This user can do this by either finding their story and clicking (hover on desktop) on the small green circle. This opens up and there is a yellow icon whih shows a pencil and a square. I chose this icon because it looks like the most comment icon when editing something. The user is then taken to another page for their story and the story title and content fields are pre-populated with the original story contents. They can then click on the edit button and their story will be edited. They will then be taken back to the stories page. 
 
 #### User wanting to edit a joke they've added
+This will be done similarly to editing a story. The use can find their own joke either from the Jokes page, or from within their profile page where it lists all of the jokes they've added to the website.
 
 #### User wanting to look at what jokes they've added
+This can be found if this user is logged into their account, and go to their profile page. It shows a list of all the jokes they've added, and they can click on each individual one to see if anybody has commented on their post.
 
 #### User wanting to see if they've got a comment on any of their stories or jokes
+The user will need to have an account and be signed into it. They can then go to their Profile page and see by what stories and jokes they've added by clicking on the relevant tab. From here, the user can edit or delete their joke or story. 
 
 ### Wireframe designs 
 
 
 ### Features
+This website is designed to allow users to easily navigate through the different pages to find a joke or story. They are told from their initial visit that they will have to have their own user account set up and signed into before being allowed to add any of their own content. 
 
+#### Account
+One of the features is the account set up. Users can choose their own username and password, they are also required to add their own email address. This can later lead on to getting notifications from the website whenever somebody comments on their content.
+
+#### Edit/Delete
+User, if they are logged on, can edit or delete their own content from two places: their stories/jokes page and the Profile page. This allows users to have control over their account and content by removing or fixing and comments they've made. They are also able to delete or edit their own comments after they've posted them by finding the comment they wish to change/delete.
+
+#### Posting content
+Users, after logging in, can post their own content on either page. Whenever they do so, they can see their content on the relative page.
+
+#### Mobile version
+Users using mobile can easily navigate and see the various pages by clicking on the burger icon in the top left of the screen. This is to allow more space on the screen and stop the need to reduce the size of the text.
 
 ### Features left to implement
 
+#### A favourites system
+I began trying to implement the favourites system, however unfortunately being realistic with time, I was unable to implement it. The system was there to have a star of similar icon on the story or joke, and allow a user to click it to save it to their favourites. This then would have been added to the database, along with their own personal account ID, to allow them to see it in their own Profile page
+
+#### An 'upvote' system
+Similar to the one found on Reddit, the amount of up and down votes would have been shown on the joke or comment itself. This would have fedback to the user within their Profile screen to see if there content is liked or disliked by other users. Working similarly to the favourites system, this will be implemented to add more interaction with the content. 
 
 ### Technologies used
 
+flask
+python
+html5
+css3
+JavaScript
+Materialize
+Balsamiq
 
 ### Testing
 
