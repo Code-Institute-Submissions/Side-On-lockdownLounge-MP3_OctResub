@@ -10,10 +10,34 @@ The users can create their own account and use this to comment on peoples storie
 The website only currently has the basic functionality which allows people to do the above. There are more features which can be added to the website. 
 
 ### User experience
+New user coming to the website to browse
+
+New user wanting to create a story
+
+New user wanting to comment on a story
+
+New user wanting to look at jokes
+
+New user wanting to comment on a joke
+
+New user wanting to ad their own joke
+
+New user wanting to sign in and register an account
+
+User wanting to look at the stories they've added
+
+User wanting to edit a story they've added
+
+User wanting to edit a joke they've added
+
+Usr wanting to look at what jokes they've added
+
+User wanting to see if they've got a comment on any of their stories or jokes
 
 ### Wireframe desgins 
 
 ### Features
+
 
 ### Features left to implement
 
