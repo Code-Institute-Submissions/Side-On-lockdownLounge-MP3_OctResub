@@ -12,7 +12,6 @@
 <div class="comment">
   <p>{{ comment.story_comment }}</p>
   <p>user commented: {{ comment.created_by }}</p>
-  <p>{{ comment.story_id }}</p>
 <a
               href="{{ url_for('delete_story_comment', story_comment_id=comment._id) }}"
               class="btn-floating red"
