@@ -18,6 +18,12 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
+@app.route("/index")
+def index():
+    return render_template("index.html")
+
+
 @app.route("/get_stories")
 def get_stories():
     stories = list(mongo.db.stories.find())
@@ -60,29 +66,6 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/")
-@app.route("/index")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/story/<story_id>")
-def story(story_id):
-    story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
-    story_comment = list(
-        mongo.db.story_comment.find({'story_id': story}))
-    return render_template(
-        "story.html", story=story, story_comment=story_comment)
-
-
-@app.route("/joke/<joke_id>")
-def joke(joke_id):
-    joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
-    joke_comment = list(
-        mongo.db.joke_comment.find({'joke_id': joke}))
-    return render_template("joke.html", joke=joke, joke_comment=joke_comment)
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -109,6 +92,13 @@ def login():
     return render_template("login.html")
 
 
+@app.route("/logout")
+def logout():
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
@@ -116,11 +106,13 @@ def profile(username):
     return render_template("profile.html", username=username)
 
 
-@app.route("/logout")
-def logout():
-    flash("You have been logged out")
-    session.pop("user")
-    return redirect(url_for("login"))
+@app.route("/story/<story_id>")
+def story(story_id):
+    story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
+    story_comment = list(
+        mongo.db.story_comment.find({'story_id': story}))
+    return render_template(
+        "story.html", story=story, story_comment=story_comment)
 
 
 @app.route("/add_story", methods=["GET", "POST"])
@@ -173,6 +165,14 @@ def delete_story(story_id):
     flash("Story Deleted")
     return redirect(url_for("get_stories"))
 
+
+@app.route("/joke/<joke_id>")
+def joke(joke_id):
+    joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
+    joke_comment = list(
+        mongo.db.joke_comment.find({'joke_id': joke}))
+    return render_template("joke.html", joke=joke, joke_comment=joke_comment)
+    
 
 @app.route("/add_joke", methods=["GET", "POST"])
 def add_joke():

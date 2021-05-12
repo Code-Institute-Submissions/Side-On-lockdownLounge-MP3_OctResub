@@ -19,32 +19,24 @@ These tests were carried out throughout the development process. I've including 
 | ---------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------ |
 | grid layout taken from Materialize | testing layout in browser and changing screen resolution size | Layout did not change correctly when the screen was smaller                | Reviewed grid guidance on documentation, added correct class name to suite needs | class="s12"                          |
 | anchor tags                        | look in browser, didn't want them blue and highlighted        | tags were highlighted blue and caused issues with the story and joke cards | change CSS code to remove the text decoration                                    | text-decoration: none; color: black; |
-|                                    |                                                               |                                                                            |                                                                                  |                                      |
-|                                    |                                                               |                                                                            |                                                                                  |                                      |
-|                                    |                                                               |                                                                            |                                                                                  |                                      |
-|                                    |                                                               |                                                                            |                                                                                  |                                      |
-|                                    |                                                               |                                                                            |                                                                                  |                                      |
+|             'created by' text on story/jokes cards|view in browser|       the text was appearing within the card, but not in the top left corner as I wanted|           add code in css to set the text to the correct location|position: absolute; left: 5px; top: 5px;
+
 
 ## JavasScript
+As the JavaScript was taken from the Materialize responsive design, only parts of the code needed to be changed to suit my needs.
 
 | Test | How | Result | Fix | Code used |
 | ---- | --- | ------ | --- | --------- |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
+|    Location of the function button on the story/joke| consult the documentation from the Materialize page and view my own in the browser     |   The button was in the correct location, however the other buttons would go upwards instead of to the left as expected     |   Add code to the js function changing this direction  |            var instances = M.FloatingActionButton.ini(elems, {direction: 'left'
+
 
 ## Python
 
 | Test | How | Result | Fix | Code used |
 | ---- | --- | ------ | --- | --------- |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
-|      |     |        |     |           |
+|  home page    | check in browser after lauching app     | taken to stories page not home page       |   add code to make index the first page when the website loads  |      @app.route("/")     |
+|   username check   | creating a story and clicking on it    |  story went onto new page   |   took me to the correct story     |   N/A  |   N/A        |
+|   only show comments associated with the story   | creating a comment on the story    |    showed all comments associated with all stories    |  add code to story function   |       story_comment = list(mongo.db.story_comment.find({'story_id': story}))    |
+|   add comment to database   | create comment| comment went into database, however didn't store story/joke Id with it    |  Add code into the function to recognise the ID and add it to the database   |"story_id": mongo.db.stories.find_one({"_id": ObjectId(story_id)}),      |
 |      |     |        |     |           |
 |      |     |        |     |           |
