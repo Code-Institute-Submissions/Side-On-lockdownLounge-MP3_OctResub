@@ -76,13 +76,13 @@ Similar to the one found on Reddit, the amount of up and down votes would have b
 
 ### Technologies used
 
-flask
-python
-html5
-css3
-JavaScript
-Materialize
-Balsamiq
+flask - used to create templates within the html5, allowing for pages to be generated depending on the action that's taken.
+python3 - to create functions allowing the use of linking to mongoDB and to create templates
+html5 - to display in a browser
+css3 - for styling purposes
+JavaScript - used with Materialize to create basic responsive elements within the website.
+Materialize - for the basic CSS layouts
+Balsamiq - to create wireframes
 
 ### Testing
 
@@ -90,7 +90,15 @@ Find here
 
 ### Acknowledgements
 
+As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts. 
+
+I used the tutor support on a few occassions as I was having some ificulty in some areas around posting and getting data from the database. 
+
+I also used the basic idea of a mini project I went through within the Code Institute course, mainly the registration and log in feature as it is best suited what I wanted from this website. 
+
 ### Code used
+
+All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however 
 
 ### Deployment
 
