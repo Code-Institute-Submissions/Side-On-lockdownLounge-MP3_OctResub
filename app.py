@@ -134,7 +134,7 @@ def add_story():
 def add_story_comment(story_id):
     if request.method == "POST":
         story_comment = {
-            "story_id": mongo.db.stories.find_one({"_id": ObjectId(story_id)}),
+            "story_id": request.form.get("story_id"),
             "story_comment": request.form.get("story_comment"),
             "created_by": session["user"]
         }
@@ -248,6 +248,7 @@ def delete_story_comment(story_comment_id):
 def edit_story_comment(story_comment_id):
     if request.method == "POST":
         submit = {
+            "story_id": request.form.get("story_id"),
             "story_comment": request.form.get("story_comment"),
             "created_by": session["user"]
         }
