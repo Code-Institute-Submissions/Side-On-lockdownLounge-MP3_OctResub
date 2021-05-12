@@ -141,7 +141,6 @@ def add_story_comment(story_id):
         mongo.db.story_comment.insert_one(story_comment)
         flash("Comment Successfully Added")
         return redirect(url_for("get_stories"))
-    return render_template("add_story_comment.html")
 
 
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
@@ -172,7 +171,7 @@ def joke(joke_id):
     joke_comment = list(
         mongo.db.joke_comment.find({'joke_id': joke}))
     return render_template("joke.html", joke=joke, joke_comment=joke_comment)
-    
+
 
 @app.route("/add_joke", methods=["GET", "POST"])
 def add_joke():
@@ -215,7 +214,6 @@ def add_joke_comment(joke_id):
         mongo.db.joke_comment.insert_one(joke_comment)
         flash("Comment Successfully Added")
         return redirect(url_for("get_jokes"))
-    return render_template("add_joke_comment.html")
 
 
 @app.route("/delete_joke/<joke_id>")
@@ -244,6 +242,23 @@ def delete_story_comment(story_comment_id):
     mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
     flash("Story Comment Deleted")
     return redirect(url_for("get_stories"))
+
+
+@app.route("/edit_story_comment/<story_comment_id>", methods=["GET", "POST"])
+def edit_story_comment(story_comment_id):
+    if request.method == "POST":
+        submit = {
+            "story_comment": request.form.get("story_comment"),
+            "created_by": session["user"]
+        }
+        mongo.db.story_comment.update(
+            {"_id": ObjectId(story_comment_id)}, submit)
+        flash("Story Comment Successfully Edited")
+
+    story_comment = mongo.db.story_comment.find_one(
+        {"_id": ObjectId(story_comment_id)})
+    return render_template(
+        "edit_story_comment.html", story_comment=story_comment)
 
 
 if __name__ == "__main__":
