@@ -7,6 +7,15 @@ a {
   color: black;
 }
 
+.text-links {
+  font-size: large;
+}
+
+.index-info {
+  margin-top: 60px;
+  width: 80%;
+}
+
 .nav-wrapper {
   background-color: #393e46;
 }

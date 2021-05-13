@@ -12,6 +12,7 @@
 <div class="comment">
   <p>{{ comment.story_comment }}</p>
   <p>user commented: {{ comment.created_by }}</p>
+  {% if story.created_by|lower == session.user|lower %}
 <a
               href="{{ url_for('delete_story_comment', story_comment_id=comment._id) }}"
               class="btn-floating red"
@@ -33,8 +34,11 @@
               "
             >
             </a>
+            {% endif %}
 </div>
 {% endfor %}
+{% if story.created_by|lower == session.user|lower %}
+
 <div class="center">
 <form method="POST" action="{{ url_for('add_story_comment', story_id=story._id) }}">
   <div class="row ">
@@ -66,5 +70,5 @@
 
 </form>
 </div>
-
+{% endif %}
 {% endblock %}
