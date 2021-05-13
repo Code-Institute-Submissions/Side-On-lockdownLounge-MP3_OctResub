@@ -102,7 +102,7 @@ def logout():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        {"username": username })
     return render_template("profile.html", username=username)
 
 
