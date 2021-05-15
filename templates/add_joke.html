@@ -35,12 +35,19 @@
 
                 <label for="joke_content">Joke Content</label>
                 <!--submit button -->
+                <div class="center">
                 <button
-                  class="col s6 btn-large sign-in-button offset-m3"
+                  class="btn-large"
                   type="submit"
                 >
                   Submit!
                 </button>
+                <a
+                class="btn-large red"
+                href="{{ url_for('get_jokes') }}"
+              >
+                Back to Jokes
+              </a></div>
               </div>
             </div>
         </div>

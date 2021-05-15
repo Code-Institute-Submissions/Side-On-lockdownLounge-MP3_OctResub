@@ -35,19 +35,22 @@
 
           <label for="story_content">Story content</label>
           <!--submit button -->
-          <button class="col btn-large offset-m3" type="submit">
-            Submit!
-          </button>
-          <a
-          class="col btn-large red offset-m3"
-          href="{{ url_for('get_stories') }}"
-        >
-          Back to stories
-        </a>
-        </div>
+          <div class="center">
+            <button
+              class="btn-large"
+              type="submit"
+            >
+              Submit!
+            </button>
+            <a
+            class="btn-large red"
+            href="{{ url_for('get_stories') }}"
+          >
+            Back to Stories
+          </a></div>
       </div>
     </div>
-    
+    </div>
     </form>
 
   </div>
