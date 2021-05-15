@@ -178,10 +178,10 @@ form {
 
 .comment-box {
   color: black;
-  border: 1px solid black;
-  margin-top: 15px;
-  padding-left: 10px;
+  border: none none solid none;
   width: 80%;
+  margin-bottom: 60px;
+  border-bottom: 1px solid black;
 }
 
 .comment {
