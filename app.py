@@ -181,7 +181,7 @@ def add_joke():
         joke = {
             "joke_title": request.form.get("joke_title"),
             "joke_content": request.form.get("joke_content"),
-            "created_by": session["user"]
+            "created_by": session["user"],
         }
         mongo.db.jokes.insert_one(joke)
         flash("Your joke has been added!")
@@ -215,7 +215,7 @@ def add_joke_comment(joke_id):
         }
         mongo.db.joke_comment.insert_one(joke_comment)
         flash("Comment Successfully Added")
-        return redirect(url_for("get_jokes"))
+        return redirect(url_for("joke"))
 
 
 @app.route("/delete_joke/<joke_id>")
