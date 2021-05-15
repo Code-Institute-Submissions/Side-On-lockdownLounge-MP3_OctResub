@@ -29,6 +29,16 @@
     </div>
   </form>
 </div>
+
+<div class="center welcome-message">
+  <h1>Welcome to the jokes page!</h1>
+  <p>Got a funny joke? Or just here to read one?</p>
+  <p>If you're registered with an account, feel free to leave your own story!</p>
+  {% if not session.user %}
+  <p>Click on the button below to go to the registration page</p>
+  <a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
+</div>
+{% endif %}
 {% if session.user %}
 <div class="row center">
 <a href="{{ url_for('add_joke') }}" class="waves-effect waves-light btn"
