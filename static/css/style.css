@@ -160,6 +160,10 @@ form {
     padding-top: 10px;
 }
 
+.register-comment {
+  font-size: 1.2rem;
+}
+
 .comment {
   background-color: grey;
   color: white;

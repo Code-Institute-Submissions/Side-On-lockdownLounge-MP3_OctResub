@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<div class="row">
+<div class="row center">
   <div class="col s12">
     <h1>{{ joke.joke_title }}</h1>
     <p class="line-break">{{ joke.joke_content }}</p>
@@ -7,7 +7,13 @@
     <p class="left created-by">Created by: {{ joke.created_by }}</p>
   </div>
 </div>
+{% if not session.user %}
+<div class="register-comment center">
+<p>Want to leave a comment? Click on the button below to go to the registration page</p>
 
+<a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
+{% endif %}
+</div>
 {% for comment in joke_comment %}
 <div class="comment">
   <p>{{ comment.joke_comment }}</p>
