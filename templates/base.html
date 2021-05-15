@@ -24,6 +24,7 @@
       <title>Lockdown Lounge</title>
    </head>
    <body>
+      <div class="navbar-fixed">
       <nav>
          <div class="nav-wrapper">
             <a href="{{ url_for('index') }}" class="brand-logo s12">Lockdown Lounge</a>
@@ -48,7 +49,7 @@
                {% endif %}
             </ul>
          </div>
-      </nav>
+      </nav></div>
       <!--mobile side nav bar-->
       <ul class="sidenav" id="mobile-demo">
          <li><a href="{{ url_for('index') }}">Home</a></li>

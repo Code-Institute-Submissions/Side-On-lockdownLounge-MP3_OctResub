@@ -7,6 +7,10 @@ body {
   font-size: larger;
 }
 
+.navbar-fixed {
+  z-index: 998;
+}
+
 .welcome-message {
   margin-bottom: 20px;
   line-break: loose;
