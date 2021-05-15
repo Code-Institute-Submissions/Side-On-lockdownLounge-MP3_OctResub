@@ -72,6 +72,11 @@ nav .brand-logo {
   font-size: 1rem;
 }
 
+.content-border {
+  border: 2px solid black;
+  margin-top: 10px;
+}
+
 
 .flashes h4 {
   line-height: 2;
