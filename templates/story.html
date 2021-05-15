@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% block content %}
-<div class="row center content-border">
-  <div class="col s12">
-    <h1>{{ story.story_title }}</h1>
-    <p class="line-break">{{ story.story_content }}</p>
+<div class="row content-border">
+  <div class="col s12 content">
+    <h1 class="center">{{ story.story_title }}</h1>
+    <p class="line-break left">{{ story.story_content }}</p>
     <br />
-    <p class="left created-by">Created by: {{ story.created_by }}</p>
+    <p class="content-created-by">Created by: {{ story.created_by }}</p>
   </div>
 </div>
 {% if not session.user %}

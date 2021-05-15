@@ -68,6 +68,17 @@ nav .brand-logo {
   font-size: 1rem;
 }
 
+.content-created-by{
+  position: absolute;
+  right: 5px;
+  bottom: -20px;
+  font-size: 1.2rem;
+}
+
+.content {
+  position: relative;
+}
+
 .comment-created-by {
   font-size: 1rem;
 }
@@ -113,6 +124,10 @@ nav .brand-logo {
 
 .comment-btn {
   margin-left: 5px;
+}
+
+.btn {
+  margin-bottom: 30px;
 }
 
 .btn-floating {
