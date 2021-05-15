@@ -30,13 +30,13 @@
   </form>
 </div>
 <div class="center welcome-message">
-  <h1>Welcome to the stories page!</h1>
-  <p>Here you can read some stories on peoples lockdown experiences</p>
+  <h1>Stories page</h1>
+  <p>Here you can read some stories on peoples lockdown experiences.</p>
   <p>If you're registered with an account, feel free to leave your own story!</p>
   {% if not session.user %}
   <p>Click on the button below to go to the registration page</p>
 
-  <a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
+  <a href="{{ url_for('register') }}" class="btn-large register-button">Register here</a>
 
 {% endif %}
 </div>
