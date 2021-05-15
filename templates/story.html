@@ -48,10 +48,10 @@
   <p>{{ comment.story_comment }}</p>
   <p>user commented: {{ comment.created_by }}</p>
   {% if story.created_by|lower == session.user|lower %}
-  <div class="comment-btn">
+  <div class="comment-btns">
 <a
               href="{{ url_for('delete_story_comment', story_comment_id=comment._id) }}"
-              class="btn-floating red right"
+              class="btn-floating comment-btn red right"
               style="
                 opacity: 1;
                 transform: scale(1) translateY(0px) translateX(0px);
@@ -63,13 +63,15 @@
 
             <a
               href="{{ url_for('edit_story_comment', story_comment_id=comment._id) }}"
-              class="btn-floating orange right"
+              class="btn-floating comment-btn orange right"
               style="
                 opacity: 1;
                 transform: scale(1) translateY(0px) translateX(0px);
               "
             >
-            </a>
+            
+            <i class="far fa-edit"></i>
+          </a>
           </div>
             {% endif %}
 </div>

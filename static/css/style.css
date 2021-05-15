@@ -71,10 +71,14 @@ nav .brand-logo {
   z-index: 997;
 }
 
-.comment-btn {
+.comment-btns {
   position: relative;
   right: 10px;
   bottom: 50px;
+}
+
+.comment-btn {
+  margin-left: 5px;
 }
 
 .btn-floating {

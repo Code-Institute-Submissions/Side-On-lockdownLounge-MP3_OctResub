@@ -13,10 +13,10 @@
   <p>{{ comment.joke_comment }}</p>
   <p>user commented: {{ comment.created_by }}</p>
   {% if joke.created_by|lower == session.user|lower %}
-  <div class="comment-btn">
+  <div class="comment-btns">
 <a
               href="{{ url_for('delete_joke_comment', joke_comment_id=comment._id) }}"
-              class="btn-floating red"
+              class="btn-floating comment-btn right red"
               style="
                 opacity: 1;
                 transform: scale(1) translateY(0px) translateX(0px);
@@ -28,12 +28,13 @@
 
             <a
               href="{{ url_for('edit_joke_comment', joke_comment_id=comment._id) }}"
-              class="btn-floating orange"
+              class="btn-floating comment-btn right orange"
               style="
                 opacity: 1;
                 transform: scale(1) translateY(0px) translateX(0px);
               "
             >
+              <i class="far fa-edit"></i>
             </a>
           </div>
             {% endif %}
