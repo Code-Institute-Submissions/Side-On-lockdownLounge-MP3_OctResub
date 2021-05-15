@@ -25,11 +25,19 @@
                                 
                                 
                                 <!--edit cancel button -->
-                                <div class="btn-center">
-                                <button class="col s6 btn green" type="submit">Edit!
-                                </button>
-                                <a href="{{ url_for('get_jokes') }}" class="col s6 btn red">Cancel</a>
-                            </div>
+                                <div class="center">
+                                    <button
+                                      class="btn-large"
+                                      type="submit"
+                                    >
+                                      Submit!
+                                    </button>
+                                    <a
+                                    class="btn-large red"
+                                    href="{{ url_for('get_jokes') }}"
+                                  >
+                                    Back to Jokes
+                                  </a></div>
                             </div>
                         </div>
                     </form>

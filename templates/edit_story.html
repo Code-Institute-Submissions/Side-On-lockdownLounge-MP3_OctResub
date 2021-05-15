@@ -23,11 +23,19 @@
                                 <input type="text" name="story_content" id="story_content" class="validate"
                                     minlength="5" maxlength="2000" data-length="15" value="{{ story.story_content }}" required>
                                 <label for="story_content">Story Content</label>
-                                <button class="col s6 btn green" type="submit">Edit!
-                                </button>
-                                <a href="{{ url_for('get_stories') }}" class="col s6 btn red">Cancel</a>
-                                <!--submit button -->
-                                
+                                <div class="center">
+                                    <button
+                                      class="btn-large"
+                                      type="submit"
+                                    >
+                                      Submit!
+                                    </button>
+                                    <a
+                                    class="btn-large red"
+                                    href="{{ url_for('get_stories') }}"
+                                  >
+                                    Back to Stories
+                                  </a></div>
                             </div>
                         </div>
                     </form>
