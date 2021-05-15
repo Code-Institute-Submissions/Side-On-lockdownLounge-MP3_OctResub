@@ -37,11 +37,12 @@
   <p>Click on the button below to go to the registration page</p>
 
   <a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
-</div>
+
 {% endif %}
+</div>
 {% if session.user %}
 <div class="row center">
-  <a href="{{ url_for('add_story') }}" class="btn">Add a story!</a>
+  <a href="{{ url_for('add_story') }}" class="btn-large">Add a story!</a>
 </div>
 {% endif %}
 
