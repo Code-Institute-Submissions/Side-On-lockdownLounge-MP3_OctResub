@@ -57,14 +57,19 @@ nav .brand-logo {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
+  width: 95%;
 }
 
 .created-by {
   text-align: left;
-  font-size: smaller;
   position: absolute;
   left: 5px;
   top: 5px;
+  font-size: 1rem;
+}
+
+.comment-created-by {
+  font-size: 1rem;
 }
 
 
