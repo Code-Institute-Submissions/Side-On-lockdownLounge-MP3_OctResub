@@ -4,16 +4,25 @@
 body {
   background-color: #eee;
   font-family: 'Playfair Display', serif;
-  font-size: larger;
+  font-size: 2rem;
 }
 
 .navbar-fixed {
   z-index: 998;
 }
 
+nav {
+  font-size: 2rem;
+}
+
 .welcome-message {
   margin-bottom: 20px;
-  line-break: loose;
+  line-break: 20px;
+  font-size: 1.6rem;
+}
+
+.index.info {
+  font-size: 5rem;
 }
 
 a {
@@ -72,10 +81,24 @@ nav .brand-logo {
   z-index: 997;
 }
 
+.btn-large i {
+  font-size: 2.2rem;
+}
+
+.btn-floating.btn-large {
+  width: 66px;
+  height: 66px;
+  padding: 0;
+}
+
 .comment-btns {
   position: relative;
   right: 10px;
   bottom: 50px;
+}
+
+.btn-floating.btn-large i {
+  line-height: 66px;
 }
 
 .comment-btn {
