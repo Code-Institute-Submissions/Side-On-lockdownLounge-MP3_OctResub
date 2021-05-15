@@ -30,11 +30,11 @@ def get_stories():
     return render_template("stories.html", stories=stories)
 
 
-@app.route("/get_user_content")
-def get_user_content():
+@app.route("/account")
+def account():
     stories = list(mongo.db.stories.find())
     jokes = list(mongo.db.jokes.find())
-    return render_template("profile.html", stories=stories, jokes=jokes)
+    return render_template("account.html", stories=stories, jokes=jokes)
 
 
 @app.route("/get_jokes")

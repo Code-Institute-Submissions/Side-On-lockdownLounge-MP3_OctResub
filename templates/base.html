@@ -38,8 +38,8 @@
                <li><a href="{{ url_for('add_story') }}">Add A Story</a></li>
                <li><a href="{{ url_for('add_joke') }}">Add A Joke</a></li>
                <li>
-                  <a href="{{ url_for('get_user_content', username=session['user']) }}"
-                     >Profile</a
+                  <a href="{{ url_for('account', username=session['user']) }}"
+                     >Account</a
                      >
                </li>
                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -59,8 +59,8 @@
                <li><a href="{{ url_for('add_story') }}">Add A Story</a></li>
                <li><a href="{{ url_for('add_joke') }}">Add A Joke</a></li>
                <li>
-                  <a href="{{ url_for('get_user_content', username=session['user']) }}"
-                     >Profile</a
+                  <a href="{{ url_for('account', username=session['user']) }}"
+                     >Account</a
                      >
                </li>
                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
