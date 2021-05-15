@@ -13,6 +13,7 @@
   <p>{{ comment.joke_comment }}</p>
   <p>user commented: {{ comment.created_by }}</p>
   {% if joke.created_by|lower == session.user|lower %}
+  <div class="comment-btn">
 <a
               href="{{ url_for('delete_joke_comment', joke_comment_id=comment._id) }}"
               class="btn-floating red"
@@ -34,6 +35,7 @@
               "
             >
             </a>
+          </div>
             {% endif %}
 </div>
 {% endfor %}
