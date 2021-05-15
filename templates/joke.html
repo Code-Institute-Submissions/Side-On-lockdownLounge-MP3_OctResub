@@ -4,14 +4,14 @@
     <h1>{{ joke.joke_title }}</h1>
     <p>{{ joke.joke_content }}</p>
     <br />
-    <p>Created by: {{ joke.created_by }}</p>
+    <p class="left created-by">Created by: {{ joke.created_by }}</p>
   </div>
 </div>
 
 {% for comment in joke_comment %}
 <div class="comment">
   <p>{{ comment.joke_comment }}</p>
-  <p>user commented: {{ comment.created_by }}</p>
+  <p class="comment-created-by">user commented: {{ comment.created_by }}</p>
   {% if joke.created_by|lower == session.user|lower %}
   <div class="comment-btns">
     <a

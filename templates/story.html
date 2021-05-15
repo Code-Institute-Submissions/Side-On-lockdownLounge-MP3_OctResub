@@ -4,7 +4,7 @@
     <h1>{{ story.story_title }}</h1>
     <p>{{ story.story_content }}</p>
     <br />
-    <p class="left">Created by: {{ story.created_by }}</p>
+    <p class="left created-by">Created by: {{ story.created_by }}</p>
   </div>
 </div>
 
@@ -46,7 +46,7 @@
 {% for comment in story_comment %}
 <div class="comment">
   <p>{{ comment.story_comment }}</p>
-  <p>user commented: {{ comment.created_by }}</p>
+  <p class="comment-created-by">user commented: {{ comment.created_by }}</p>
   {% if story.created_by|lower == session.user|lower %}
   <div class="comment-btns">
 <a
