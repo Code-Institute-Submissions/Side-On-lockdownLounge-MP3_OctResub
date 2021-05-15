@@ -189,10 +189,6 @@ form {
   font-size: 1.4rem;
 }
 
-.hidden {
-  display: none;
-}
-
 .line-break {
   white-space: pre-wrap;
 }
