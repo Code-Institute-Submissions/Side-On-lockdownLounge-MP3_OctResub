@@ -9,9 +9,9 @@
 </div>
 {% if not session.user %}
 <div class="register-comment center">
-<p>Want to leave a comment? Click on the button below to go to the registration page</p>
-
-<a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
+<p>Want to leave a comment? Sign in or Regsiter below!</p>
+<a href="{{ url_for('login') }}" class="btn darker register-button">Login</a>
+<a href="{{ url_for('register') }}" class="btn register-button orange darken-1">Register</a>
 {% endif %}
 </div>
 {% for comment in joke_comment %}

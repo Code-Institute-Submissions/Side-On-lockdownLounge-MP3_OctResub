@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block content %}
-<div class="row center">
+<div class="row center content-border">
   <div class="col s12">
     <h1>{{ story.story_title }}</h1>
     <p class="line-break">{{ story.story_content }}</p>
@@ -10,8 +10,8 @@
 {% if not session.user %}
 <div class="register-comment center">
 <p>Want to leave a comment? Click on the button below to go to the registration page</p>
-
-<a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
+<a href="{{ url_for('login') }}" class="btn register-button">Login</a>
+<a href="{{ url_for('register') }}" class="btn register-button orange darken-1">Register</a>
 {% endif %}
 </div>
 {% if story.created_by|lower == session.user|lower %}
