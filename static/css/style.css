@@ -104,7 +104,7 @@ nav .brand-logo {
 .comment-btns {
   position: relative;
   right: 10px;
-  bottom: 50px;
+  bottom: 60px;
 }
 
 .btn-floating.btn-large i {
@@ -130,14 +130,6 @@ nav .brand-logo {
 .search-bar {
   min-width: 200px;
   display: inline-block;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.add-joke {
-  width: 100%;
 }
 
 .brand-logo-small-screen {
@@ -169,12 +161,17 @@ form {
   font-size: 1.2rem;
 }
 
-.comment {
-  background-color: grey;
-  color: white;
-  border: solid black;
+.comment-box {
+  color: black;
+  border: 1px solid black;
   margin-top: 15px;
   padding-left: 10px;
+  width: 80%;
+}
+
+.comment {
+  margin-top: 5px;
+  font-size: 1.4rem;
 }
 
 .hidden {

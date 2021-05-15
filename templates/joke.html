@@ -14,9 +14,40 @@
 <a href="{{ url_for('register') }}" class="btn register-button orange darken-1">Register</a>
 {% endif %}
 </div>
+{% if joke.created_by|lower == session.user|lower %}
+<div class="center">
+  <form
+    method="POST"
+    action="{{ url_for('add_joke_comment', joke_id=joke._id) }}"
+  >
+    <div class="row">
+      <!--joke comment-->
+      <div class="row">
+        <div class="input-field col s6">
+          <input
+            type="text"
+            name="joke_comment"
+            id="joke_comment"
+            class="validate"
+            minlength="5"
+            maxlength="100"
+            required
+          />
+
+          <label for="joke_comment">Joke comment</label>
+        </div>
+      </div>
+      <!--submit button -->
+      <button class="col s6 btn offset-m3" type="submit">Add comment!</button>
+    </div>
+    <input type="hidden" value="{{ joke._id}}" name="joke_id" id="joke_id" />
+  </form>
+</div>
+{% endif %} 
+
 {% for comment in joke_comment %}
-<div class="comment">
-  <p>{{ comment.joke_comment }}</p>
+<div class="comment-box">
+  <p class="comment">{{ comment.joke_comment }}</p>
   <p class="comment-created-by">user commented: {{ comment.created_by }}</p>
   {% if joke.created_by|lower == session.user|lower %}
   <div class="comment-btns">
@@ -39,33 +70,4 @@
   </div>
   {% endif %}
 </div>
-{% endfor %} {% if joke.created_by|lower == session.user|lower %}
-<div class="center">
-  <form
-    method="POST"
-    action="{{ url_for('add_joke_comment', joke_id=joke._id) }}"
-  >
-    <div class="row">
-      <!--joke comment-->
-      <div class="row">
-        <div class="input-field col s6">
-          <input
-            type="text"
-            name="joke_comment"
-            id="joke_comment"
-            class="validate"
-            minlength="5"
-            maxlength="100"
-            required
-          />
-
-          <label for="joke_comment">joke Comment</label>
-        </div>
-      </div>
-      <!--submit button -->
-      <button class="col s6 btn offset-m3" type="submit">Add comment!</button>
-    </div>
-    <input type="hidden" value="{{ joke._id}}" name="joke_id" id="joke_id" />
-  </form>
-</div>
-{% endif %} {% endblock %}
+{% endfor %}{% endblock %}

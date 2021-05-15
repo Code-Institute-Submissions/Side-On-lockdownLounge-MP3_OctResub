@@ -32,7 +32,7 @@
             required
           />
           
-          <label for="story_comment">Story Comment</label>
+          <label for="story_comment">Story comment</label>
         </div>
       </div>
           <!--submit button -->
@@ -50,8 +50,8 @@
 {% endif %}
 
 {% for comment in story_comment %}
-<div class="comment">
-  <p>{{ comment.story_comment }}</p>
+<div class="comment-box">
+  <p class="comment">{{ comment.story_comment }}</p>
   <p class="comment-created-by">user commented: {{ comment.created_by }}</p>
   {% if story.created_by|lower == session.user|lower %}
   <div class="comment-btns">
@@ -80,6 +80,7 @@
           </a>
           </div>
             {% endif %}
+          </div>
 </div>
 {% endfor %}
 {% endblock %}
