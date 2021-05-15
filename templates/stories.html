@@ -29,6 +29,16 @@
     </div>
   </form>
 </div>
+<div class="center welcome-message">
+  <h1>Welcome to the stories page!</h1>
+  <p>Here you can read some stories on peoples lockdown experiences</p>
+  <p>If you're registered with an account, feel free to leave your own story!</p>
+  {% if not session.user %}
+  <p>Click on the button below to go to the registration page</p>
+
+  <a href="{{ url_for('register') }}" class="btn register-button">Register here</a>
+</div>
+{% endif %}
 {% if session.user %}
 <div class="row center">
   <a href="{{ url_for('add_story') }}" class="btn">Add a story!</a>

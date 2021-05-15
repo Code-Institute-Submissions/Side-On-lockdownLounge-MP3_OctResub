@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Caveat&family=Kalam:wght@300&family=Playfair+Display&family=Poiret+One&display=swap');
+
+
 body {
   background-color: #eee;
+  font-family: 'Playfair Display', serif;
+  font-size: larger;
+}
+
+.welcome-message {
+  margin-bottom: 20px;
+  line-break: loose;
 }
 
 a {
