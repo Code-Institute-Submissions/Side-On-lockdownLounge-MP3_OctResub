@@ -168,3 +168,7 @@ form {
 .hidden {
   display: none;
 }
+
+.line-break {
+  white-space: pre-wrap;
+}
