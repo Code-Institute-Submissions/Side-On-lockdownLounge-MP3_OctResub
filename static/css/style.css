@@ -71,6 +71,12 @@ nav .brand-logo {
   z-index: 997;
 }
 
+.comment-btn {
+  position: relative;
+  right: 10px;
+  bottom: 50px;
+}
+
 .btn-floating {
   text-align: center;
   font-size: 18px;
