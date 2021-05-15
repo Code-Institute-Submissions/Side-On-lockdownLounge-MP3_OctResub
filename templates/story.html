@@ -53,7 +53,7 @@
 <div class="comment-box">
   <p class="comment">{{ comment.story_comment }}</p>
   <p class="comment-created-by">user commented: {{ comment.created_by }}</p>
-  {% if story.created_by|lower == session.user|lower %}
+  {% if comment.created_by|lower == session.user|lower %}
   <div class="comment-btns">
 <a
               href="{{ url_for('delete_story_comment', story_comment_id=comment._id) }}"
