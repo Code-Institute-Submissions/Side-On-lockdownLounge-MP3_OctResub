@@ -60,6 +60,10 @@ nav .brand-logo {
   width: 95%;
 }
 
+.joke-card {
+  background-color: #75c2f6;
+}
+
 .created-by {
   text-align: left;
   position: absolute;
