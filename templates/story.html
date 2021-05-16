@@ -4,7 +4,7 @@
     <h1 class="center">{{ story.story_title }}</h1>
     <p class="line-break left">{{ story.story_content }}</p>
     <br />
-    <p class="content-created-by">Created by: <a href="{{ url_for('profile') }}">{{ story.created_by }}</a></p>
+    <p class="content-created-by">Created by: <a href="{{ url_for('profile', username=story.created_by )}}">{{ story.created_by }}</a></p>
   </div>
 </div>
 {% if not session.user %}

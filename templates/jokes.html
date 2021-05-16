@@ -50,13 +50,12 @@
 
 
   {% for joke in jokes %}
-  
 <div class="row center">   
 <a href=" {{ url_for('joke', joke_id=joke._id) }}">
     <div class="s12">
       <div class="card joke-card">
       <div class="card-content">
-        <p class="left created-by">Created by: {{ joke.created_by }}</p>
+        <a class="left created-by" href="{{ url_for('profile', username=joke.created_by )}}">Told by: {{ joke.created_by }}</a>
         <h3>{{ joke.joke_title }}</h3>
       </div>
       {% if joke.created_by|lower == session.user|lower %}

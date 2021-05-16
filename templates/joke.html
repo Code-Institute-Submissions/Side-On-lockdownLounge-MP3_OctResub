@@ -4,7 +4,7 @@
     <h1>{{ joke.joke_title }}</h1>
     <p class="line-break left">{{ joke.joke_content }}</p>
     <br />
-    <p class="content-created-by">Created by: {{ joke.created_by }}</p>
+    <p class="content-created-by">Created by: <a href="{{ url_for('profile', username=joke.created_by )}}">{{ joke.created_by }}</a></p>
   </div>
 </div>
 {% if not session.user %}

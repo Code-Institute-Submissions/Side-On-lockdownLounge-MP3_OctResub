@@ -53,7 +53,7 @@
     <div class="s12">
       <div class="card">
       <div class="card-content">
-        <p class="left created-by">Created by: {{ story.created_by }}</p>
+        <a class="left created-by" href="{{ url_for('profile', username=story.created_by )}}">Written by: {{ story.created_by }}</a>
         <h3>{{ story.story_title }}</h3>
       </div>
       {% if story.created_by|lower == session.user|lower %}
