@@ -103,9 +103,9 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/profile")
+@app.route("/profile/<username>")
 def profile(username):
-    username = mongo.db.users.find({"username": username})
+    username = mongo.db.users.find_one({"username": username})
     stories = list(mongo.db.stories.find({"created_by": username}))
     jokes = list(mongo.db.jokes.find({"created_by": username}))
     return render_template(
@@ -176,7 +176,6 @@ def joke(joke_id):
     joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
     joke_comment = list(
         mongo.db.joke_comment.find({'joke_id': joke_id}))
-    print(f"COMMENTS: {joke_comment}")
     return render_template(
         "joke.html", joke=joke, joke_comment=joke_comment)
 
