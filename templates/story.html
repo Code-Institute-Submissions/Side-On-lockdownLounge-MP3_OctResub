@@ -50,7 +50,7 @@
 {% for comment in story_comment %}
 <div class="comment-box">
   <p class="comment">{{ comment.story_comment }}</p>
-  <p class="comment-created-by">user commented: {{ comment.created_by }}</p>
+  <a class="comment-created-by" href="{{ url_for('profile', username=comment.created_by )}}" >user commented: {{ comment.created_by }}</a>
   {% if comment.created_by|lower == session.user|lower %}
   <div class="comment-btns">
 <a
