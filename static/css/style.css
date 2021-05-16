@@ -70,6 +70,7 @@ nav .brand-logo {
   left: 5px;
   top: 5px;
   font-size: 1rem;
+  z-index: 999;
 }
 
 .content-created-by{
