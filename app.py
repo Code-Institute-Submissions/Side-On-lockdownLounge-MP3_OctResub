@@ -30,11 +30,15 @@ def get_stories():
     return render_template("stories.html", stories=stories)
 
 
-@app.route("/account")
-def account():
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
     stories = list(mongo.db.stories.find())
     jokes = list(mongo.db.jokes.find())
-    return render_template("account.html", stories=stories, jokes=jokes)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        return render_template(
+            "account.html", stories=stories, jokes=jokes, username=username)
 
 
 @app.route("/get_jokes")
@@ -99,11 +103,13 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
+@app.route("/profile")
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": username })
-    return render_template("profile.html", username=username)
+    username = mongo.db.users.find({"username": username})
+    stories = list(mongo.db.stories.find({"created_by": username}))
+    jokes = list(mongo.db.jokes.find({"created_by": username}))
+    return render_template(
+        "profile.html", stories=stories, jokes=jokes, username=username)
 
 
 @app.route("/story/<story_id>")
