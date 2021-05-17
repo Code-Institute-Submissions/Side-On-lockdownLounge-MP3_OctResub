@@ -48,7 +48,12 @@ This can be found if this user is logged into their account, and go to their pro
 #### User wanting to see if they've got a comment on any of their stories or jokes
 The user will need to have an account and be signed into it. They can then go to their Profile page and see by what stories and jokes they've added by clicking on the relevant tab. From here, the user can edit or delete their joke or story. 
 
+#### User wants to see other users jokes and stories
+The user will need to find a story or joke and then click on a the username of the person they want to see. They will then be taken to a profile of that user, showing all of their content. They can then go into each individual joke or story to leave a comment, if they are signed in.
+
 ### Wireframe designs 
+All of the wireframes were designed at the start of the project to help me get an idea in my head of what I wanted to aim for. I wanted to create a very simple forum where people could share positive content with each other. The wireframes show both the deskptop and mobile designs. 
+
 
 
 ### Features
@@ -65,6 +70,9 @@ Users, after logging in, can post their own content on either page. Whenever the
 
 #### Mobile version
 Users using mobile can easily navigate and see the various pages by clicking on the burger icon in the top left of the screen. This is to allow more space on the screen and stop the need to reduce the size of the text.
+
+#### Profile
+Users cant look at each others content by clicking on their name found anywhere on the joke, story or comment. This is to open the doors to having your own personal area where others can view and comment on anything else they've created.
 
 ### Features left to implement
 
@@ -98,7 +106,24 @@ I also used the basic idea of a mini project I went through within the Code Inst
 
 ### Code used
 
-All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however 
+All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however manipualted it to suite why I needed my app to do. 
 
 ### Deployment
 
+#### 
+1. Create a development project folder and navigate to it cd /[folder path]
+2. Initialise Git git init
+3. Clone the project repository into your local development folder git clone https://github.com/bowets/ms3-crew-dictionary.git
+4. Install Python 3
+5. Install Pip
+6. Create a virtual environment for your local project
+7. Install Flask
+8. Install PyMongo
+9. Install the packages in the requirements.txt file
+10. Create an env.py file with the following parameters:
+11. IP: 0.0.0.0
+12. PORT: 5000
+13. MONGO_DBNAME: [name of your database]
+14. MONGO_URI: mongodb://<yourdbuser>:<yourdbpassword>@ds225442.mlab.com:25442/<yourdbname>
+15. SECRET_KEY: [any string of characters. the longer the better]
+16. The project already contains a .gitignore file which contains env.py 9. Run the project python app.py
