@@ -28,8 +28,7 @@
             <p class="left created-by">Created by: {{ story.created_by }}</p>
             <h3>{{ story.story_title }}</h3>
           </div>
-  {% if session.user %}
-
+  {% if session.user == story.created_by %}
           <div class="fixed-action-btn click-to-toggle right direction-left">
             <a class="btn-floating btn-large black">
               <i class="far fa-hand-point-left"></i>
@@ -78,7 +77,7 @@
               <p class="left created-by">Created by: {{ joke.created_by }}</p>
               <h3>{{ joke.joke_title }}</h3>
             </div>
-  {% if session.user %}
+  {% if session.user == joke.created_by %}
 
             <div class="fixed-action-btn click-to-toggle right direction-left">
               <a class="btn-floating btn-large black">
