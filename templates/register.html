@@ -4,7 +4,7 @@
 <h3>Register</h3>
 <p>If you want to add any of your own content, or would like to leave a comment on anybody elses story or joke, you're going to need an account</p>
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12" method="POST" action="{{ url_for('register') }}">
         <div class="col s12">
             <div class="row">
                 <div class="input-field col s12">
@@ -27,14 +27,14 @@
                     <label for="password">Create a Password</label>
                 </div>
             </div>
-            <button class="col s6 btn-large orange darken-1 offset-m3" type="submit">Register
+            <button class="btn-large orange darken-1" type="submit">Register
             </button>
         </div>
     </form>
 </div>
 
-<div class="row center">
-        <p class="center-align">
+<div class="row">
+        <p>
             Already Registered? <a href="{{ url_for('login') }}"> <strong><u>Log In</u></strong></a>
         </p>
     </div>
