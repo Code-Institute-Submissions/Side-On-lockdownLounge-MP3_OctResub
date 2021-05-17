@@ -21,8 +21,7 @@
   </div>
 
   <div id="stories" class="col s12">
-    {% for story in stories %} {% if story.created_by|lower ==
-    session.user|lower %}
+    {% for story in stories %} 
     <div class="row center">
       <a href=" {{ url_for('story', story_id=story._id) }}">
         <div class="card">
@@ -64,12 +63,11 @@
           </div>
         </div>
       </a>
-    </div>
-    {% endif %} {% endfor %}
+    </div> {% endfor %}
   </div>
 
   <div id="jokes" class="col s12">
-    {% for joke in jokes %} {% if joke.created_by|lower == session.user|lower %}
+    {% for joke in jokes %} 
     <div class="row center">
       <a href=" {{ url_for('joke', joke_id=joke._id) }}">
         <div class="s12">
@@ -113,8 +111,7 @@
           </div>
         </div>
       </a>
-    </div>
-    {% endif %} {% endfor %}
+    </div> {% endfor %}
   </div>
 </div>
 {% endblock %}

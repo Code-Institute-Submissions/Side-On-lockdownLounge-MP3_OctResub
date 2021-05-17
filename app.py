@@ -32,11 +32,11 @@ def get_stories():
 
 @app.route("/account/<username>", methods=["GET", "POST"])
 def account(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     stories = list(mongo.db.stories.find(
         {"created_by": username}))
     jokes = list(mongo.db.jokes.find({"created_by": username}))
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
     if session["user"]:
         return render_template(
             "account.html", stories=stories, jokes=jokes, username=username)
