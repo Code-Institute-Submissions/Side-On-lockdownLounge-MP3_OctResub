@@ -94,14 +94,6 @@ Balsamiq - to create wireframes
 
 Find here
 
-### Acknowledgements
-
-As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts. 
-
-I used the tutor support on a few occassions as I was having some ificulty in some areas around posting and getting data from the database. 
-
-I also used the basic idea of a mini project I went through within the Code Institute course, mainly the registration and log in feature as it is best suited what I wanted from this website. 
-
 ### Code used
 
 All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however manipualted it to suite why I needed my app to do. 
@@ -111,7 +103,7 @@ All of the code I used I've tailored to suite my needs. I've taken sections of c
 #### 
 1. Create a development project folder and navigate to it cd /[folder path]
 2. Initialise Git git init
-3. Clone the project repository into your local development folder git clone https://github.com/bowets/ms3-crew-dictionary.git
+3. Clone the project repository into your local development folder git clone https://github.com/Side-On/lockdownLounge-MP3
 4. Install Python 3
 5. Install Pip
 6. Create a virtual environment for your local project
@@ -125,3 +117,13 @@ All of the code I used I've tailored to suite my needs. I've taken sections of c
 14. MONGO_URI: mongodb://<yourdbuser>:<yourdbpassword>@ds225442.mlab.com:25442/<yourdbname>
 15. SECRET_KEY: [any string of characters. the longer the better]
 16. The project already contains a .gitignore file which contains env.py 9. Run the project python app.py
+
+### Acknowledgements
+
+As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts and inutuitive designs. Unfortunately due to personal circumstances, I was unable to make the first submission. There was a lot more I wanted to do with the project, however was unable to invest the time I wanted.
+
+I used part of the deployment section from the readme.md file created by bowets: https://github.com/bowets 
+
+I used the tutor support on a few occassions as I was having some difficulty in some areas around the comments feature and retrieving data from the database. 
+
+I also used the basic idea of a mini project I went through within the Code Institute course, mainly the registration and log in feature as it is best suited what I wanted from this website. 
