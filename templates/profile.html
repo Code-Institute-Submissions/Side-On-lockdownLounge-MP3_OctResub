@@ -22,11 +22,12 @@
   <div id="stories" class="col s12">
     {% for story in stories %} 
     <div class="row center">
-      <a href=" {{ url_for('story', story_id=story._id) }}">
         <div class="card">
           <div class="card-content">
             <p class="left created-by">Created by: {{ story.created_by }}</p>
-            <h3>{{ story.story_title }}</h3>
+            
+      <a href=" {{ url_for('story', story_id=story._id) }}">
+            <h3>{{ story.story_title }}</h3></a>
           </div>
   {% if session.user == story.created_by %}
           <div class="fixed-action-btn click-to-toggle right direction-left">
@@ -63,19 +64,19 @@
           </div>
           {% endif %}
         </div>
-      </a>
     </div> {% endfor %}
   </div>
 
   <div id="jokes" class="col s12">
     {% for joke in jokes %} 
     <div class="row center">
-      <a href=" {{ url_for('joke', joke_id=joke._id) }}">
         <div class="s12">
           <div class="card joke-card">
             <div class="card-content">
               <p class="left created-by">Created by: {{ joke.created_by }}</p>
-              <h3>{{ joke.joke_title }}</h3>
+              
+      <a href=" {{ url_for('joke', joke_id=joke._id) }}">
+              <h3>{{ joke.joke_title }}</h3></a>
             </div>
   {% if session.user == joke.created_by %}
 
@@ -114,7 +115,6 @@
             {% endif %}
           </div>
         </div>
-      </a>
     </div>{% endfor %}
   </div>
 </div>

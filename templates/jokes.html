@@ -51,11 +51,11 @@
 
   {% for joke in jokes %}
 <div class="row center">   
-<a href=" {{ url_for('joke', joke_id=joke._id) }}">
+
     <div class="s12">
       <div class="card joke-card">
-      <div class="card-content">
-        <h3>{{ joke.joke_title }}</h3>
+      <div class="card-content"><a href=" {{ url_for('joke', joke_id=joke._id) }}">
+        <h3>{{ joke.joke_title }}</h3></a>
       </div>
       <a class="left created-by" href="{{ url_for('profile', username=joke.created_by )}}">Told by: {{ joke.created_by }}</a>
       {% if joke.created_by|lower == session.user|lower %}
@@ -96,7 +96,6 @@
     </div>
   
   </div>
-  </a>
 </div>
 
 {% endfor %}
