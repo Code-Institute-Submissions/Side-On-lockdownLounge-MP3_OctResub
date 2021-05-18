@@ -12,6 +12,8 @@ These tests were carried out throughout the development process. I've including 
 | Test user input (passwords)                   | creating a new user with a password                                               | password was created, however password could be less than 5 characters             | Added rule to the html code to require more than 5 characters to create a more secure password          | minlength="5"                                    |
 | search bar location on both stories and jokes | view in broswer                                                                   | the searchbar was on the left of the screen and the width was longer than the card | I added code in-line with the html to fix the issue and location of the search bar                      | div class="search-bar center" style="width: 50%" |
 | length of joke and stories                    | by copying large amounts of text into the relevant section to fix a story or joke | there was only a short space to add the text                                       | increased to limit in the forms                                                                         | maxlength="600",                                 |
+| HTML Validator| copy code from HTML pages and check errors|There was an error which showed there were two form elements |Removed the form elements|N/A|
+HTML Validator (comments area)| Enter code into the HTML validator|There was an error which said the type="text" wasn't allowed in a textarea element|Removed the type code| N/A
 
 <br>
 
@@ -45,3 +47,9 @@ As the JavaScript was taken from the Materialize responsive design, only parts o
 | add comment to database                      | create comment                      | comment went into database, however didn't store story/joke Id with it | Add code into the function to recognise the ID and add it to the database | "story_id": mongo.db.stories.find_one({"_id": ObjectId(story_id)}),   |
 |user profile displaying the correct user|clicking on a users name|receieved an error saying could not complete URL| added code into the profile functio|    username = mongo.db.users.find_one({"username": username})["username"]<br>I also needed to add: "/profile/<"username"> (ignore the " ")
 |||||                                                                        |
+
+
+#### Validators
+
+[WC3 Validator](https://validator.w3.org/) - All HTML pages were tested. 'Bad Value' errors created by the Jinji code, however there were some errors which have been subsequently fixed, shown in the HTML testing table.
+
