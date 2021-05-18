@@ -60,11 +60,14 @@ This website is designed to allow users to easily navigate through the different
 #### Account
 One of the features is the account set up. Users can choose their own username and password, they are also required to add their own email address. This can later lead on to getting notifications from the website whenever somebody comments on their content.
 
+#### Creating content
+Users, after logging in, can post their own content on either page. Whenever they do so, they can see their content on the relative page.
+
+#### Reading data
+Each piece of content is stored in MongoDb and is retrieved depending on the page, account status and if the user is the content creator.
+
 #### Edit/Delete
 User, if they are logged on, can edit or delete their own content from two places: their stories/jokes page and the Profile page. This allows users to have control over their account and content by removing or fixing and comments they've made. They are also able to delete or edit their own comments after they've posted them by finding the comment they wish to change/delete.
-
-#### Posting content
-Users, after logging in, can post their own content on either page. Whenever they do so, they can see their content on the relative page.
 
 #### Mobile version
 Users using mobile can easily navigate and see the various pages by clicking on the burger icon in the top left of the screen. This is to allow more space on the screen and stop the need to reduce the size of the text.
@@ -84,46 +87,96 @@ Similar to the one found on Reddit, the amount of up and down votes would have b
 
 flask - used to create templates within the html5, allowing for pages to be generated depending on the action that's taken.
 python3 - to create functions allowing the use of linking to mongoDB and to create templates
-html5 - to display in a browser
-css3 - for styling purposes
+HTML5 - to display in a browser
+CSS3 - for styling purposes
 JavaScript - used with Materialize to create basic responsive elements within the website.
 Materialize - for the basic CSS layouts
 Balsamiq - to create wireframes
 
 ### Testing
 
-Find here
+Find [here](https://github.com/Side-On/lockdownLounge-MP3/blob/master/test.md) for tests on the CSS, HTMl, JavaScript and Python aspects of the project. Unfortuntely they're not as extensive as I would have liked, this was due to timescales and needing to get the project submitted in time.
 
 ### Code used
 
-All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however manipualted it to suite why I needed my app to do. 
+The code which is used to get the user up with reigstration and logging in was taken from the Code Instutite mini project within the course. After writing the code along with the course, I then used it in this project as it did what I wanted to do.
+
+All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however manipualted it to suite why I needed my app to do. There has also been some code which was fixed by speaking to the tutor support system provided by the Code Institute. 
 
 ### Deployment
 
-#### 
-1. Create a development project folder and navigate to it cd /[folder path]
-2. Initialise Git git init
-3. Clone the project repository into your local development folder git clone https://github.com/Side-On/lockdownLounge-MP3
-4. Install Python 3
-5. Install Pip
-6. Create a virtual environment for your local project
-7. Install Flask
-8. Install PyMongo
-9. Install the packages in the requirements.txt file
-10. Create an env.py file with the following parameters:
-11. IP: 0.0.0.0
-12. PORT: 5000
-13. MONGO_DBNAME: [name of your database]
-14. MONGO_URI: mongodb://<yourdbuser>:<yourdbpassword>@ds225442.mlab.com:25442/<yourdbname>
-15. SECRET_KEY: [any string of characters. the longer the better]
-16. The project already contains a .gitignore file which contains env.py 9. Run the project python app.py
+#### Configuration within Python and required code 
+Initially you'll need to configure your app.py file. You'll be required to import your local env.py for local environments in order to connect with Heroku.
+
+Add this doe to your app.py (or whatever is the file name for your app) as follows:
+
+    if os.path.exists('env.py'):
+        import env
+
+
+    app = Flask(__name__)
+
+    app.config['MONGO_DBNAME'] = os.environ.get('MONGO_DBNAME')
+    app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
+    app.secret_key = os.environ.get('SECRET_KEY')
+
+    mongo = PyMongo(app)
+
+At the bottom of the app.py file, enter this code (Before deployment, ensure debug=False)
+
+    if __name__ == '__main__':
+        app.run(host=os.environ.get('IP'),
+                port=int(os.environ.get('PORT')),
+                debug=False)
+
+You'll also need a 'Procfile' and ensure your requirements.txt are up to date. This can be placed into your root folder. Within this folder, add this code on the first line: web: python app.py. Ensure that there isn't a blank line underneath as this can cause errors.
+
+Next you'll want to install the requirements.txt file. To do this, type the following command in the terminal: pip3 install -r requirements.txt. This will tell Heroku what requirements are needed to run the app. 
+
+Finally, create and env.py file. Enter the below code into this file. In the "secret key" section, go to a random key generator to get this secret key. You will need to create a SECRET_KEY and input the IP and PORT settings. I used Random Key Gen.
+
+    import os
+
+    # App config
+    os.environ.setdefault("IP", "0.0.0.0")
+    os.environ.setdefault("PORT", "5000")
+    os.environ.setdefault("SECRET_KEY", "<Your secret key>")
+
+    # MongoDB config
+    os.environ.setdefault(
+        MONGO_URI", "mongodb+srv://<user>:<password to database>@<cluster name>.43yzg.mongodb.net/<database name>?retryWrites=true&w=majority
+    os.environ.setdefault("MONGO_DBNAME", "<database name>")
+
+
+#### Copying the GitHub project
+
+GitHub Pages
+The project was deployed to GitHub Pages using the following steps...
+
+Log in to GitHub and locate the GitHub Repository.
+At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+Scroll down the Settings page until you locate the "GitHub Pages" Section, copy the link shown.
+Under "Source", click the dropdown called "None" and select "Master Branch".
+The page will automatically refresh.
+Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
+Making a Local Clone
+Log in to GitHub and locate the GitHub Repository.
+Under the repository name, click "Clone or download".
+To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+Open Git Bash.
+Change the current working directory to the location where you want the cloned directory to be made.
+Type git clone, and then paste the URL you copied in Step 3.
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+Press Enter. Your local clone will be created.
 
 ### Acknowledgements
 
 As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts and inutuitive designs. Unfortunately due to personal circumstances, I was unable to make the first submission. There was a lot more I wanted to do with the project, however was unable to invest the time I wanted.
 
-I used part of the deployment section from the readme.md file created by bowets: https://github.com/bowets 
+I used part of the deployment section from the readme.md file created by AWsSG: https://github.com/AwsSG/wurc/blob/master/README.md
 
-I used the tutor support on a few occassions as I was having some difficulty in some areas around the comments feature and retrieving data from the database. 
+I used the tutor support on a few occassions as I was having some difficulty in some areas around the comments feature and retrieving data from the database. A huge thank you to them for pointing me in the right direction with some of the issues I was facing, especially the commenting feature.
 
 I also used the basic idea of a mini project I went through within the Code Institute course, mainly the registration and log in feature as it is best suited what I wanted from this website. 
+
+I searched for jokes and stories mainly on https://www.reddit.com, I also did generic Google searches to find more content to fill in the website. 
