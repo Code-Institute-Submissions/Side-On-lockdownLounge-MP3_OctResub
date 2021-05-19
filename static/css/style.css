@@ -30,6 +30,22 @@ a {
   color: black;
 }
 
+.stories-link {
+  color: #00adb5;
+}
+
+.stories-link:hover {
+  filter: brightness(75%);
+}
+
+.jokes-link {
+  color: #75c2f6;
+}
+
+.jokes-link:hover {
+  filter: brightness(75%);
+}
+
 .nav-wrapper {
   background-color: #393e46;
 }
