@@ -57,6 +57,12 @@ nav .brand-logo {
   padding-left: 10px;
 }
 
+.welcome-message {
+  margin-bottom: 20px;
+  line-break: 20px;
+  font-size: 1.6rem;
+}
+
 .card {
   background-color: #00adb5;
   color: black;
