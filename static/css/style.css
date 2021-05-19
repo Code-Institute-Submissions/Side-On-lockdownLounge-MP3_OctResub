@@ -15,14 +15,13 @@ nav {
   font-size: 2rem;
 }
 
-.welcome-message {
-  margin-bottom: 20px;
-  line-break: 20px;
-  font-size: 1.6rem;
+.index-heading {
+  margin-bottom: 40px;
 }
 
 .index-info {
-  font-size: 5rem;
+  font-size: 1.6rem;
+  padding-top: 20px;
 }
 
 a {
