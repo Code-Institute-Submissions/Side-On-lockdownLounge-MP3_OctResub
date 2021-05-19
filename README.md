@@ -213,4 +213,4 @@ I used the tutor support on a few occassions as I was having some difficulty in 
 
 I also used the basic idea of a mini project I went through within the Code Institute course, mainly the registration and log in feature as it is best suited what I wanted from this website. 
 
-I searched for jokes and stories mainly on https://www.reddit.com, I also did generic Google searches to find more content to fill in the website. 
+I've used jokes from [ReadersDigest](https://www.rd.com/list/short-jokes/) and stories from [ThoughtCatalog](https://thoughtcatalog.com/).
