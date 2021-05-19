@@ -90,15 +90,25 @@ I feel this is an important feature to implement as it gives the user more contr
 ### Technologies used
 
 [flask](https://flask.palletsprojects.com/en/1.1.x/) - Used alongside Python as the web framework for the project.
+
 [python3](https://www.python.org/) - Used create functions allowing the use of linking to mongoDB.
+
 [HTML5](https://en.wikipedia.org/wiki/HTML5) - Markup language used to display files in a browser.
+
 [CSS3](https://en.wikipedia.org/wiki/CSS) - Used for styling purposes, allowing consistency across the website.
+
 [JQuery](https://jquery.com/) - Used with Materialize to create basic responsive elements within the website.
+
 [Materialize](https://materializecss.com/) - Used for the basic CSS layouts, as well as basic forms and navigator bar.
+
 [Balsamiq](https://balsamiq.com/) - To create wireframes at the initial design stage of the project.
+
 [MongoDB](https://www.mongodb.com/cloud/atlas) - Used for the database and storage of the objects created in the website.
+
 [Font-awesome](https://fontawesome.com/) - Used for the icons shown against some of the fields in the website.
+
 [Google-fonts](https://fonts.google.com/) - For the fonts used in the website content.
+
 [GitHub](https://github.com/) - Used for version control, storing the code used for the website and to enable editing/deleting.
 
 ### Testing
