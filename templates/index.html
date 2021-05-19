@@ -5,13 +5,16 @@
 <h1>The Lockdown Lounge</h1>
 <h6>A place to laugh, cry and procrastinate until we're allowed outside again.</h6>
 </div>
+{% if not session.user %}
 <a href="{{ url_for('login') }}" class="btn-large">Login</a>
 <a href="{{ url_for('register') }}" class="btn-large orange darken-1">Register</a>
+
 <br>
 <div class="index-info">
+    <p>If you are here to add something into the mix, head over to the register page to get an account. You can only add content or comments if you're signed into an account.</p>
+{% endif %}
 <p>Here you can relax, share some stories or jokes about your time in lockdown. If you don't have an account feel free to browse and look at all of the content.</p>
 <br>
-<p>If you are here to add something into the mix, head over to the register page to get an account. You can only add content or comments if you're signed into an account.</p>
 <br>
 <h4>Love hearing a good story?</h4>
 <p>Head over to the <a class="stories-link" href="{{ url_for('get_stories') }}">Stories</a> area to share some funny, sad or wholesome stories you've been through in your Lockdown time.</p> 
