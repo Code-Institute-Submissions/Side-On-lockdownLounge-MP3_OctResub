@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-
+<div class="center">
 <h1 class="center">The Lockdown Lounge</h1>
+<h6>A place to laugh, cry and procrastinate until we're allowed outside again</h6>
+<a href="{{ url_for('login') }}" class="btn-large">Login</a>
+<a href="{{ url_for('register') }}" class="btn-large orange darken-1">Register</a>
+<br>
 <div class="container index-info center">
 <p>Here you can relax, share some stories or jokes about your time in lockdown. If you don't have an account feel free to browse and look at all of the content</p>
 <p>If you are here to add something into the mix, head over to the register page to get an account. You can only add content or comments if you're signed into an account</p>
@@ -14,6 +18,6 @@
 
 <p>Click on the button below to go to the registration page</p>
 
-<a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register here</a>
+</div>
 </div>
 {% endblock %}

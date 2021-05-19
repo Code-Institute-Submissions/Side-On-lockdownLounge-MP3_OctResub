@@ -21,22 +21,13 @@ nav {
   font-size: 1.6rem;
 }
 
-.index.info {
+.index-info {
   font-size: 5rem;
 }
 
 a {
   text-decoration: none;
   color: black;
-}
-
-.text-links {
-  font-size: large;
-}
-
-.index-info {
-  margin-top: 60px;
-  width: 80%;
 }
 
 .nav-wrapper {
