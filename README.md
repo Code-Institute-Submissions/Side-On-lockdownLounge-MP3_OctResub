@@ -55,6 +55,8 @@ The user will need to find a story or joke and then click on a the username of t
 ### Wireframe designs 
 All of the wireframes were designed at the start of the project to help me get an idea in my head of what I wanted to aim for. I wanted to create a very simple forum where people could share positive content with each other. The wireframes show both the deskptop and mobile designs. 
 
+
+
 ### Features
 This website is designed to allow users to easily navigate through the different pages to find a joke or story. They are told from their initial visit that they will have to have their own user account set up and signed into before being allowed to add any of their own content. 
 
