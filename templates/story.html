@@ -15,7 +15,6 @@
 {% endif %}
 </div>
 {% if session.user %}
-
 <div class="center">
 <form method="POST" action="{{ url_for('add_story_comment', story_id=story._id) }}">
   <div class="row ">
