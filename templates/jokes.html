@@ -36,7 +36,8 @@
   <p>If you're registered with an account, feel free to leave your own story!</p>
   {% if not session.user %}
   <p>Click on the button below to go to the registration page</p>
-  <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register here</a>
+<a href="{{ url_for('login') }}" class="btn-large">Login</a>
+  <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register</a>
 </div>
 {% endif %}
 {% if session.user %}
