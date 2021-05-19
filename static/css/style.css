@@ -189,6 +189,10 @@ form {
     padding-top: 10px;
 }
 
+.tab-text {
+  font-weight: 900;
+}
+
 .register-comment {
   font-size: 1.2rem;
 }
