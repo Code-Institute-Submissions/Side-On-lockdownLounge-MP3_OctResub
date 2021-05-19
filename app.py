@@ -67,7 +67,7 @@ def register():
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
-        return redirect(url_for("profile", username=session["user"]))
+        return redirect(url_for("account", username=session["user"]))
     return render_template("register.html")
 
 
@@ -222,7 +222,7 @@ def add_joke_comment(joke_id):
         }
         mongo.db.joke_comment.insert_one(joke_comment)
         flash("Comment Successfully Added")
-        return redirect(url_for("joke"))
+        return redirect(url_for("get_jokes"))
 
 
 @app.route("/delete_joke/<joke_id>")
