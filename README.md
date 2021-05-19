@@ -10,6 +10,7 @@ The users can create their own account and use this to comment on peoples storie
 The website only currently has the basic functionality which allows people to do the above. There are more features which can be added to the website.
 
 ### User experience
+Here are some examples of potential circumstances different users might be in and how the website enables each other to use the website effectively. All of these experiences were tested and met by navigating to the relevant section of the website. 
 
 #### New user coming to the website to browse
 The new user will be taken to the index page and there is a small amount of text. As this is only a forum page, I haven't gone for large images or things like that, as it's purely user content based. 
@@ -83,19 +84,26 @@ I began trying to implement the favourites system, however unfortunately being r
 #### An 'upvote' system
 Similar to the one found on Reddit, the amount of up and down votes would have been shown on the joke or comment itself. This would have fedback to the user within their Profile screen to see if there content is liked or disliked by other users. Working similarly to the favourites system, this will be implemented to add more interaction with the content. 
 
+#### Reset password
+I feel this is an important feature to implement as it gives the user more control over the security of their own account. It will enable a logged in user to change their current password to a more secure one, if they feel their account is vulnerable.
+
 ### Technologies used
 
-flask - used to create templates within the html5, allowing for pages to be generated depending on the action that's taken.
-python3 - to create functions allowing the use of linking to mongoDB and to create templates
-HTML5 - to display in a browser
-CSS3 - for styling purposes
-JavaScript - used with Materialize to create basic responsive elements within the website.
-Materialize - for the basic CSS layouts
-Balsamiq - to create wireframes
+[flask](https://flask.palletsprojects.com/en/1.1.x/) - Used alongside Python as the web framework for the project.
+[python3](https://www.python.org/) - Used create functions allowing the use of linking to mongoDB.
+[HTML5](https://en.wikipedia.org/wiki/HTML5) - Markup language used to display files in a browser.
+[CSS3](https://en.wikipedia.org/wiki/CSS) - Used for styling purposes, allowing consistency across the website.
+[JQuery](https://jquery.com/) - Used with Materialize to create basic responsive elements within the website.
+[Materialize](https://materializecss.com/) - Used for the basic CSS layouts, as well as basic forms and navigator bar.
+[Balsamiq](https://balsamiq.com/) - To create wireframes at the initial design stage of the project.
+[MongoDB](https://www.mongodb.com/cloud/atlas) - Used for the database and storage of the objects created in the website.
+[Font-awesome](https://fontawesome.com/) - Used for the icons shown against some of the fields in the website.
+[Google-fonts](https://fonts.google.com/) - For the fonts used in the website content.
+[GitHub](https://github.com/) - Used for version control, storing the code used for the website and to enable editing/deleting.
 
 ### Testing
 
-Find [here](https://github.com/Side-On/lockdownLounge-MP3/blob/master/test.md) for tests on the CSS, HTMl, JavaScript and Python aspects of the project. Unfortuntely they're not as extensive as I would have liked, this was due to timescales and needing to get the project submitted in time.
+Find [here](https://github.com/Side-On/lockdownLounge-MP3/blob/master/test.md) for tests on the CSS, HTMl, JavaScript and Python aspects of the project. Unfortuntely they're not as extensive as I would have liked, this was due to timescales and needing to get the project submitted in time. This also includes information on the validator tests that were performed on each html page, css and js file.
 
 ### Code used
 
