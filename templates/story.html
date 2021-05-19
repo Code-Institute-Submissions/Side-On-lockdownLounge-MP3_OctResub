@@ -14,7 +14,7 @@
 <a href="{{ url_for('register') }}" class="btn register-button orange darken-1">Register</a>
 {% endif %}
 </div>
-{% if story.created_by|lower == session.user|lower %}
+{% if session.user %}
 
 <div class="center">
 <form method="POST" action="{{ url_for('add_story_comment', story_id=story._id) }}">
