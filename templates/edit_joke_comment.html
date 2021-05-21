@@ -9,11 +9,10 @@
                 <div class="row">
                         <!-- joke content-->
                         <div class="row">
-                            <p class="comment-edit-page">Your comment: {{ joke_comment.joke_comment }}</p>
                             <div class="input-field col s12">
                                 <textarea name="joke_comment" id="joke_comment" class="materialize-textarea"
-                                    minlength="5" value="{{ joke_comment.joke_comment }}" required></textarea>
-                                <label for="joke_comment">Write new joke comment...</label>
+                                    minlength="5" value="" required>{{ joke_comment.joke_comment }}</textarea>
+                                <label for="joke_comment">Your comment</label>
                                 <div class="center">
                                     <button
                                       class="btn-large"

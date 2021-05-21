@@ -9,9 +9,10 @@
                 <div class="row">
                         <!--story title-->
                         <div class="row">
+                            
                             <div class="input-field col s6">
-                                <input type="text" name="story_title" id="story_title" class="validate" minlength="5"
-                                    maxlength="300" value="{{ story.story_title }}" required>
+                                <textarea name="story_title" id="story_title" class="materialize-textarea" minlength="5"
+                                    maxlength="300" required>{{ story.story_title }}</textarea>
                                 <label for="story_title">Story Title</label>
 
                             </div>
@@ -19,8 +20,8 @@
                         <!-- story content-->
                         <div class="row center">
                             <div class="input-field col s12">
-                                <input type="text" name="story_content" id="story_content" class="materialize-textarea"
-                                    minlength="5" value="{{ story.story_content }}" required>
+                                <textarea name="story_content" id="story_content" class="materialize-textarea"
+                                    minlength="5" required>{{ story.story_content }}</textarea>
                                 <label for="story_content">Story Content</label>
                                 <div class="center">
                                     <button

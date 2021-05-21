@@ -8,12 +8,10 @@
             <form method="POST" action="{{ url_for('edit_story_comment', story_comment_id=story_comment._id) }}">
                 <div class="row">
                         <div class="row">
-                            <p class="comment-edit-page">Your comment: {{ story_comment.story_comment }}</p>
                             <div class="input-field col s12">
-                                <div class="input-field">
                                 <textarea name="story_comment" id="story_comment" class="materialize-textarea"
-                                    minlength="5" value="{{ story_comment.story_comment }}" required></textarea></div>
-                                <label for="story_comment">Write new story comment...</label>
+                                    minlength="5" value="" required>{{ story_comment.story_comment }}</textarea>
+                                <label for="story_comment">Story comment</label>
                                 <div class="center">
                                     <button
                                       class="btn-large"
