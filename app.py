@@ -212,7 +212,6 @@ def edit_joke(joke_id):
             }
             mongo.db.jokes.update({"_id": ObjectId(joke_id)}, submit)
             flash("Joke Successfully Edited")
-
         return render_template("edit_joke.html", joke=joke)
     else:
         return redirect(url_for("get_jokes"))
@@ -240,6 +239,7 @@ def delete_joke(joke_id):
 
 @app.route("/delete_joke_comment/<joke_comment_id>")
 def delete_joke_comment(joke_comment_id):
+    
     mongo.db.joke_comment.remove({"_id": ObjectId(joke_comment_id)})
     flash("Joke Comment Deleted")
     return redirect(url_for("get_jokes"))
@@ -262,7 +262,7 @@ def edit_joke_comment(joke_comment_id):
         return render_template(
             "edit_joke_comment.html", joke_comment=joke_comment)
     else:
-        return redirect("get_jokes")
+        return redirect(url_for("get_jokes"))
 
 
 @app.route("/search_stories", methods=["GET", "POST"])
