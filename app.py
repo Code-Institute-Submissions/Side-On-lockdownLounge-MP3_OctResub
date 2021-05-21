@@ -153,17 +153,20 @@ def add_story_comment(story_id):
 
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
 def edit_story(story_id):
-    if request.method == "POST":
-        submit = {
-            "story_title": request.form.get("story_title"),
-            "story_content": request.form.get("story_content"),
-            "created_by": session["user"]
-        }
-        mongo.db.stories.update({"_id": ObjectId(story_id)}, submit)
-        flash("Story Successfully Edited")
-
     story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
-    return render_template("edit_story.html", story=story)
+    if story.get("created_by") == session.get("user", ""):
+        if request.method == "POST":
+            submit = {
+                "story_title": request.form.get("story_title"),
+                "story_content": request.form.get("story_content"),
+                "created_by": session["user"]
+            }
+            mongo.db.stories.update({"_id": ObjectId(story_id)}, submit)
+            flash("Story Successfully Edited")
+
+        return render_template("edit_story.html", story=story)
+    else:
+        return redirect(url_for("get_stories"))
 
 
 @app.route("/delete_story/<story_id>")
