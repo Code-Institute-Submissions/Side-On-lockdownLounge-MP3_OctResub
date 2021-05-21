@@ -125,21 +125,26 @@ def story(story_id):
 
 @app.route("/add_story", methods=["GET", "POST"])
 def add_story():
-    if request.method == "POST":
-        story = {
-            "story_title": request.form.get("story_title"),
-            "story_content": request.form.get("story_content"),
-            "created_by": session["user"]
-        }
-        mongo.db.stories.insert_one(story)
-        flash("Story Successfully Added")
-        return redirect(url_for("get_stories"))
+    if session.get("user", ""):
+        if request.method == "POST":
+            story = {
+                "story_title": request.form.get("story_title"),
+                "story_content": request.form.get("story_content"),
+                "created_by": session["user"]
+            }
+            mongo.db.stories.insert_one(story)
+            flash("Story Successfully Added")
+            return redirect(url_for("get_stories"))
 
-    return render_template("add_story.html")
+        return render_template("add_story.html")
+    else:
+        return render_template("register.html")
 
 
 @app.route("/add_story_comment/<story_id>", methods=["GET", "POST"])
 def add_story_comment(story_id):
+    story_comment = mongo.db.story_comment.find_one(
+        {"_id": ObjectId(story_comment_id)})
     if request.method == "POST":
         story_comment = {
             "story_id": request.form.get("story_id"),
@@ -171,9 +176,13 @@ def edit_story(story_id):
 
 @app.route("/delete_story/<story_id>")
 def delete_story(story_id):
-    mongo.db.stories.remove({"_id": ObjectId(story_id)})
-    flash("Story Deleted")
-    return redirect(url_for("get_stories"))
+    story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
+    if story.get("created_by") == session.get("user", ""):
+        mongo.db.stories.remove({"_id": ObjectId(story_id)})
+        flash("Story Deleted")
+        return redirect(url_for("get_stories"))
+    else:
+        return redirect(url_for("get_stories"))
 
 
 @app.route("/joke/<joke_id>")
@@ -187,17 +196,20 @@ def joke(joke_id):
 
 @app.route("/add_joke", methods=["GET", "POST"])
 def add_joke():
-    if request.method == "POST":
-        joke = {
-            "joke_title": request.form.get("joke_title"),
-            "joke_content": request.form.get("joke_content"),
-            "created_by": session["user"],
-        }
-        mongo.db.jokes.insert_one(joke)
-        flash("Your joke has been added!")
-        return redirect(url_for("get_jokes"))
+    if session.get("user", ""):
+        if request.method == "POST":
+            joke = {
+                "joke_title": request.form.get("joke_title"),
+                "joke_content": request.form.get("joke_content"),
+                "created_by": session["user"],
+            }
+            mongo.db.jokes.insert_one(joke)
+            flash("Your joke has been added!")
+            return redirect(url_for("get_jokes"))
 
-    return render_template("add_joke.html")
+        return render_template("add_joke.html")
+    else:
+        return render_template("register.html")
 
 
 @app.route("/edit_joke/<joke_id>", methods=["GET", "POST"])
@@ -219,30 +231,42 @@ def edit_joke(joke_id):
 
 @app.route("/add_joke_comment/<joke_id>", methods=["GET", "POST"])
 def add_joke_comment(joke_id):
-    if request.method == "POST":
-        joke_comment = {
-            "joke_id": request.form.get("joke_id"),
-            "joke_comment": request.form.get("joke_comment"),
-            "created_by": session["user"]
-        }
-        mongo.db.joke_comment.insert_one(joke_comment)
-        flash("Comment Successfully Added")
-        return redirect(url_for("get_jokes"))
+    if session.get("user", ""):
+        if request.method == "POST":
+            joke_comment = {
+                "joke_id": request.form.get("joke_id"),
+                "joke_comment": request.form.get("joke_comment"),
+                "created_by": session["user"]
+            }
+            mongo.db.joke_comment.insert_one(joke_comment)
+            flash("Comment Successfully Added")
+            return redirect(url_for("get_jokes"))
+    else:
+        return render_template("register.html")
 
 
 @app.route("/delete_joke/<joke_id>")
 def delete_joke(joke_id):
-    mongo.db.jokes.remove({"_id": ObjectId(joke_id)})
-    flash("Joke Deleted")
-    return redirect(url_for("get_jokes"))
+    joke = mongo.db.jokes.find_one(
+        {"_id": ObjectId(joke_id)})
+    if joke.get("created_by") == session.get("user", ""):
+        mongo.db.jokes.remove({"_id": ObjectId(joke_id)})
+        flash("Joke Deleted")
+        return redirect(url_for("get_jokes"))
+    else:
+        return redirect(url_for("get_jokes"))
 
 
 @app.route("/delete_joke_comment/<joke_comment_id>")
 def delete_joke_comment(joke_comment_id):
-    
-    mongo.db.joke_comment.remove({"_id": ObjectId(joke_comment_id)})
-    flash("Joke Comment Deleted")
-    return redirect(url_for("get_jokes"))
+    joke_comment = mongo.db.joke_comment.find_one(
+        {"_id": ObjectId(joke_comment_id)})
+    if joke_comment.get("created_by") == session.get("user", ""):
+        mongo.db.joke_comment.remove({"_id": ObjectId(joke_comment_id)})
+        flash("Joke Comment Deleted")
+        return redirect(url_for("get_jokes"))
+    else:
+        return redirect(url_for("get_jokes"))
 
 
 @app.route("/edit_joke_comment/<joke_comment_id>", methods=["GET", "POST"])
@@ -281,27 +305,35 @@ def search_jokes():
 
 @app.route("/delete_story_comment/<story_comment_id>")
 def delete_story_comment(story_comment_id):
-    mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
-    flash("Story Comment Deleted")
-    return redirect(url_for("get_stories"))
+    story_comment = mongo.db.story_comment.find_one(
+        {"_id": ObjectId(story_comment_id)})
+    if story_comment.get("created_by") == session.get("user", ""):
+        mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
+        flash("Story Comment Deleted")
+        return redirect(url_for("get_stories"))
+    else:
+        return redirect(url_for("get_stories"))
 
 
 @app.route("/edit_story_comment/<story_comment_id>", methods=["GET", "POST"])
 def edit_story_comment(story_comment_id):
-    if request.method == "POST":
-        submit = {
-            "story_id": request.form.get("story_id"),
-            "story_comment": request.form.get("story_comment"),
-            "created_by": session["user"]
-        }
-        mongo.db.story_comment.update(
-            {"_id": ObjectId(story_comment_id)}, submit)
-        flash("Story Comment Successfully Edited")
-
     story_comment = mongo.db.story_comment.find_one(
         {"_id": ObjectId(story_comment_id)})
-    return render_template(
-        "edit_story_comment.html", story_comment=story_comment)
+    if story_comment.get("created_by") == session.get("user", ""):
+        if request.method == "POST":
+            submit = {
+                "story_id": request.form.get("story_id"),
+                "story_comment": request.form.get("story_comment"),
+                "created_by": session["user"]
+            }
+            mongo.db.story_comment.update(
+                {"_id": ObjectId(story_comment_id)}, submit)
+            flash("Story Comment Successfully Edited")
+        return render_template(
+            "edit_story_comment.html", story_comment=story_comment)
+    else:
+        return redirect(url_for("get_stories"))
+
 
 
 if __name__ == "__main__":
