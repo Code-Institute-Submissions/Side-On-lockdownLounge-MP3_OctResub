@@ -8,7 +8,7 @@ body {
 }
 
 .navbar-fixed {
-  z-index: 998;
+  z-index: 999;
 }
 
 .index-heading {
@@ -82,7 +82,7 @@ nav .brand-logo {
   left: 5px;
   top: 5px;
   font-size: 1rem;
-  z-index: 999;
+  z-index: 998;
 }
 
 .content-created-by{

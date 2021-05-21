@@ -24,6 +24,7 @@ HTML Validator (comments area)| Enter code into the HTML validator|There was an 
 | grid layout taken from Materialize     | testing layout in browser and changing screen resolution size | Layout did not change correctly when the screen was smaller                        | Reviewed grid guidance on documentation, added correct class name to suite needs | class="s12"                              |
 | anchor tags                            | look in browser, didn't want them blue and highlighted        | tags were highlighted blue and caused issues with the story and joke cards         | change CSS code to remove the text decoration                                    | text-decoration: none; color: black;     |
 | 'created by' text on story/jokes cards | view in browser                                               | the text was appearing within the card, but not in the top left corner as I wanted | add code in css to set the text to the correct location                          | position: absolute; left: 5px; top: 5px; |
+| created_by text| view page in html| The create_by text was visable ontop of the navbar| Add z index to navbar and create_by text| .created-by { z-index: 998 }, .navbar { z-index: 999 }|
 
 <br>
 
