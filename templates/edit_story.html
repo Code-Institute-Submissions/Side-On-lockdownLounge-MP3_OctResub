@@ -1,46 +1,29 @@
-{% extends "base.html" %}
-{% block content %}
-
+{% extends "base.html" %} {% block content %}
 <h3 class="center">Edit your story</h3>
 <div class="row">
-    <div class="col s12">
-        <div class="card-panel">
-            <form method="POST" action="{{ url_for('edit_story', story_id=story._id) }}">
-                <div class="row">
-                        <!--story title-->
-                        <div class="row">
-                            
-                            <div class="input-field col s6">
-                                <textarea name="story_title" id="story_title" class="materialize-textarea" minlength="5"
-                                    maxlength="300" required>{{ story.story_title }}</textarea>
-                                <label for="story_title">Story Title</label>
-
-                            </div>
-                        </div>
-                        <!-- story content-->
-                        <div class="row center">
-                            <div class="input-field col s12">
-                                <textarea name="story_content" id="story_content" class="materialize-textarea"
-                                    minlength="5" required>{{ story.story_content }}</textarea>
-                                <label for="story_content">Story Content</label>
-                                <div class="center">
-                                    <button
-                                      class="btn-large"
-                                      type="submit"
-                                    >
-                                      Submit!
-                                    </button>
-                                    <a
-                                    class="btn-large red"
-                                    href="{{ url_for('get_stories') }}"
-                                  >
+	<div class="col s12">
+		<div class="card-panel">
+			<form method="POST" action="{{ url_for('edit_story', story_id=story._id) }}">
+				<div class="row">
+					<div class="row">
+						<div class="input-field col s6">
+							<textarea name="story_title" id="story_title" class="materialize-textarea" minlength="5" maxlength="300" required>{{ story.story_title }}</textarea>
+							<label for="story_title">Story Title</label>
+						</div>
+					</div>
+					<div class="row center">
+						<div class="input-field col s12">
+							<textarea name="story_content" id="story_content" class="materialize-textarea" minlength="5" required>{{ story.story_content }}</textarea>
+							<label for="story_content">Story Content</label>
+							<div class="center">
+								<button class="btn-large" type="submit"> Submit! </button> <a class="btn-large red" href="{{ url_for('get_stories') }}">
                                     Back to Stories
                                   </a></div>
-                            </div>
-                        </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div> 
 {% endblock %}

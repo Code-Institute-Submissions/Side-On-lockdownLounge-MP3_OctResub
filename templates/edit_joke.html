@@ -1,41 +1,28 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <h3 class="center">Edit your joke</h3>
 <div class="row">
-    <div class="col s12">
-        <div class="card-panel">
-            <form method="POST" action="{{ url_for('edit_joke', joke_id=joke._id) }}" class="center">
-                <div class="row">
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <textarea name="joke_title" id="joke_title" class="materialize-textarea" minlength="5"
-                                    required>{{ joke.joke_title }}</textarea>
-                                <label for="story_title">Joke title</label>
+	<div class="col s12">
+		<div class="card-panel">
+			<form method="POST" action="{{ url_for('edit_joke', joke_id=joke._id) }}" class="center">
+				<div class="row">
+					<div class="row">
+						<div class="input-field col s6">
+							<textarea name="joke_title" id="joke_title" class="materialize-textarea" minlength="5" required>{{ joke.joke_title }}</textarea>
+							<label for="story_title">Joke title</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<textarea name="joke_content" id="joke_content" class="materialize-textarea" required>{{ joke.joke_content }}</textarea>
+							<label for="joke_content">Joke content</label>
+							<div class="center">
+								<button class="btn-large" type="submit"> Submit! </button> <a class="btn-large red" href="{{ url_for('get_jokes') }}">Back to Jokes</a>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea name="joke_content" id="joke_content" class="materialize-textarea"
-                                    required>{{ joke.joke_content }}</textarea>
-                                <label for="joke_content">Joke content</label>
-                                <div class="center">
-                                    <button
-                                      class="btn-large"
-                                      type="submit"
-                                    >
-                                      Submit!
-                                    </button>
-                                    <a
-                                    class="btn-large red"
-                                    href="{{ url_for('get_jokes') }}"
-                                  >
-                                    Back to Jokes
-                                  </a></div>
-                            </div>
-                        </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div> 
 {% endblock %}
