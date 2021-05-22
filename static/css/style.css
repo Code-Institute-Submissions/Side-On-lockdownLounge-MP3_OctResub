@@ -59,7 +59,6 @@ nav .brand-logo {
 
 .welcome-message {
   margin-bottom: 20px;
-  line-break: 20px;
   font-size: 1.6rem;
 }
 
@@ -203,7 +202,6 @@ form {
 
 .comment-box {
   color: black;
-  border: none none solid none;
   width: 80%;
   margin-bottom: 60px;
   border-bottom: 1px solid black;
