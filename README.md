@@ -57,7 +57,7 @@ Users can do this, after registering and logging in to their account, on any jok
 All of the wireframes were designed at the start of the project to help me get an idea in my head of what I wanted to aim for. I wanted to create a very simple forum where people could share positive content with each other. The wireframes show both the deskptop and mobile designs. 
 
 #### Index
-[index](wireframes/index.png)
+![index](wireframes/index.png)
 
 This is the index page, where the user is first taken to when visiting the website. The design was to keep it simple and give only the required information about the website. I reduced the amount of text in the final version as I felt it was a bit of an information overload and unessessarily long. I added the log in and register buttons on this page so the user can easily navigate to these pages, as the aim of the website it to get more users, and therefore more content.
 
@@ -168,6 +168,12 @@ The code which is used to get the user up with reigstration and logging in was t
 
 All of the code I used I've tailored to suite my needs. I've taken sections of code from the mini project within the course, however manipualted it to suite why I needed my app to do. There has also been some code which was fixed by speaking to the tutor support system provided by the Code Institute. 
 
+#### Code also used from:
+
+(https://stackoverflow.com/) - for general searches to discover reasons for errors.
+(https://www.w3schools.com/) - used similarly to stackoverflow.
+
+
 ### Deployment
 
 #### Configuration within Python and required code 
@@ -196,7 +202,7 @@ At the bottom of the app.py file, enter this code (Before deployment, ensure deb
 
 You'll also need a 'Procfile' and ensure your requirements.txt are up to date. This can be placed into your root folder. Within this folder, add this code on the first line: web: python app.py. Ensure that there isn't a blank line underneath as this can cause errors.
 
-Next you'll want to install the requirements.txt file. To do this, type the following command in the terminal: pip3 install -r requirements.txt. This will tell Heroku what requirements are needed to run the app. 
+Next you'll want to install the requirements.txt file. To do this, type the following command in the terminal: pip3 install -r requirements.txt. This will tell Heroku what requirements are needed to run the app. (More information on Heroku below)
 
 Finally, create and env.py file. Enter the below code into this file. In the "secret key" section, go to a random key generator to get this secret key. You will need to create a SECRET_KEY and input the IP and PORT settings. I used Random Key Gen.
 
@@ -216,6 +222,7 @@ Finally, create and env.py file. Enter the below code into this file. In the "se
 #### Copying the GitHub project
 
 GitHub Pages
+
 The project was deployed to GitHub Pages using the following steps...
 
 Log in to GitHub and locate the GitHub Repository.
@@ -248,11 +255,29 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Press Enter. Your local clone will be created.
 
+### Heroku
+
+Sign up to Heroku
+Click on the create new app button
+Select which region is closest to you
+Find the section which relates to deployment method
+Set this to GitHub
+Using your GitHub login details, connect to GitHub
+Enter the repository you wish to connect to and deploy from
+In the settings section, go to Config Vars
+This is where you enter the details you used when creating the env.py file, containing your database url and information
+Ensure you have your Procfile set up correctly and updated
+Also ensure the requirements.txt file has been updated with what is needed to run the app
+Click the deploy tab
+Select which branch you want to deploy
+Wait for the app to build
+Click on the view button to see the app!
+
 ### Acknowledgements
 
 As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts and inutuitive designs. Unfortunately due to personal circumstances, I was unable to make the first submission. There was a lot more I wanted to do with the project, however was unable to invest the time I wanted.
 
-I used part of the deployment section from the readme.md file created by AWsSG: https://github.com/AwsSG/wurc/blob/master/README.md
+I used part of the deployment section from the readme.md file created by AWsSG: https://github.com/AwsSG/wurc/blob/master/README.md.
 
 I used the tutor support on a few occassions as I was having some difficulty in some areas around the comments feature and retrieving data from the database. A huge thank you to them for pointing me in the right direction with some of the issues I was facing, especially the commenting feature.
 
