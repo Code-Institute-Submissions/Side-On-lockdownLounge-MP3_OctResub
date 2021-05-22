@@ -62,43 +62,43 @@ All of the wireframes were designed at the start of the project to help me get a
 This is the index page, where the user is first taken to when visiting the website. The design was to keep it simple and give only the required information about the website. I reduced the amount of text in the final version as I felt it was a bit of an information overload and unessessarily long. I added the log in and register buttons on this page so the user can easily navigate to these pages, as the aim of the website it to get more users, and therefore more content.
 
 #### Stories
-[stories](wireframes/stories.png)
+![stories](wireframes/stories.png)
 The stories page shows all of the stories which have been created and added by all registered users. From here, the user can click on somebodies username to take them to ther profile page, where they can see all of that users content. The user will need to click onto a story card to see the full story, as only the heading is shown. There is also a search bar at the top of the page which users can use to search a stories title or content. 
 
 #### Story
-[story](wireframes/story.png)
+![story](wireframes/story.png)
 This is the page a user is taken to when they click on a story they want to read. The user can also see any comments which have been left by other people
 
 #### Jokes
-[jokes](wireframes/jokes.png)
+![jokes](wireframes/jokes.png)
 This works the same as the stories page, except is shows all of the jokes (surprisingly). 
 
 #### Joke
-[joke](wireframes/joke.png)
+![joke](wireframes/joke.png)
 Page shown when a user clicks a joke card. They are able to see any comments left by other users, and leave their own if they're registered and logged in.
 
 #### Edit page
-[edit](wireframes/edit-content.png)
+![edit](wireframes/edit-content.png)
 This page has the same layout across all areas of editing, stories, jokes, comments. It displays the current content in the fields, so the user can easily see what they need to change.
 
 #### Add content page
-[edit](wireframes/add-content.png)
+![edit](wireframes/add-content.png)
 This page has the same layout across adding stories and jokes. It displays a title and content field for the user to fill. The fields will change sizes depending on how much is written inside.
 
 #### Account
-[account](wireframes/account.png)
+![account](wireframes/account.png)
 This page is only visable if the user is logged into their account. From here they are able to see their own jokes and stories, as well as edit and delete them. 
 
 #### Profile
-[profile](wireframes/profile.png)
+![profile](wireframes/profile.png)
 If a user clicks on another persons username, they will be taken to their profile where they can see all of the stories and jokes that user has created.
 
 #### Login
-[login](wireframes/login.png)
+![login](wireframes/login.png)
 If a user already has an account, they are taken to this page. They'll need to provide their username and password, which they created in the register page
 
 #### Register
-[register](wireframes/register.png)
+![register](wireframes/register.png)
 If a user wants to be able to leave their own comments or create content, they need to register an account first. They'll need to provide their email address, create a username and password to create an account.
 
 
