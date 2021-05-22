@@ -5,9 +5,7 @@
 ### The Lockdown Lounge
 Welcome to the Lockdown Lounge! This website forum has been created for you to share some stories or jokes with everybody else bored and stuck inside. The aim of the website is to give people some space to unwind and spent some of that free time looking at how other people have managed to get through it all. 
 
-The users can create their own account and use this to comment on peoples stories or jokes. They can also post their own content is they're logged in. If they're not registered, they will only be allowed to view the content. Not comment or add their own stuff. This is to encourage people coming back to the website. The user can also view their own content on their profile page, along with the account information. 
-
-The website only currently has the basic functionality which allows people to do the above. There are more features which can be added to the website.
+The users can create their own account and use this to comment on peoples stories or jokes. They can also post their own content is they're logged in. If they're not registered, they will only be allowed to view the content. Not comment or add their own stuff. This is to encourage people coming back to the website. The user can also view their own content on their account page where they can easily edit or delete. Users are also able to comment on other people's content. 
 
 ### User experience
 Here are some examples of potential circumstances different users might be in and how the website enables each other to use the website effectively. All of these experiences were tested and met by navigating to the relevant section of the website. 
@@ -52,9 +50,56 @@ The user will need to have an account and be signed into it. They can then go to
 #### User wants to see other users jokes and stories
 The user will need to find a story or joke and then click on a the username of the person they want to see. They will then be taken to a profile of that user, showing all of their content. They can then go into each individual joke or story to leave a comment, if they are signed in.
 
+#### User wants to write a comment on somebody elses content
+Users can do this, after registering and logging in to their account, on any joke or story. A button is shown at the bottom of the content, as well as the text box to write their comment.
+
 ### Wireframe designs 
 All of the wireframes were designed at the start of the project to help me get an idea in my head of what I wanted to aim for. I wanted to create a very simple forum where people could share positive content with each other. The wireframes show both the deskptop and mobile designs. 
 
+#### Index
+[index](wireframes/index.png)
+
+This is the index page, where the user is first taken to when visiting the website. The design was to keep it simple and give only the required information about the website. I reduced the amount of text in the final version as I felt it was a bit of an information overload and unessessarily long. I added the log in and register buttons on this page so the user can easily navigate to these pages, as the aim of the website it to get more users, and therefore more content.
+
+#### Stories
+[stories](wireframes/stories.png)
+The stories page shows all of the stories which have been created and added by all registered users. From here, the user can click on somebodies username to take them to ther profile page, where they can see all of that users content. The user will need to click onto a story card to see the full story, as only the heading is shown. There is also a search bar at the top of the page which users can use to search a stories title or content. 
+
+#### Story
+[story](wireframes/story.png)
+This is the page a user is taken to when they click on a story they want to read. The user can also see any comments which have been left by other people
+
+#### Jokes
+[jokes](wireframes/jokes.png)
+This works the same as the stories page, except is shows all of the jokes (surprisingly). 
+
+#### Joke
+[joke](wireframes/joke.png)
+Page shown when a user clicks a joke card. They are able to see any comments left by other users, and leave their own if they're registered and logged in.
+
+#### Edit page
+[edit](wireframes/edit-content.png)
+This page has the same layout across all areas of editing, stories, jokes, comments. It displays the current content in the fields, so the user can easily see what they need to change.
+
+#### Add content page
+[edit](wireframes/add-content.png)
+This page has the same layout across adding stories and jokes. It displays a title and content field for the user to fill. The fields will change sizes depending on how much is written inside.
+
+#### Account
+[account](wireframes/account.png)
+This page is only visable if the user is logged into their account. From here they are able to see their own jokes and stories, as well as edit and delete them. 
+
+#### Profile
+[profile](wireframes/profile.png)
+If a user clicks on another persons username, they will be taken to their profile where they can see all of the stories and jokes that user has created.
+
+#### Login
+[login](wireframes/login.png)
+If a user already has an account, they are taken to this page. They'll need to provide their username and password, which they created in the register page
+
+#### Register
+[register](wireframes/register.png)
+If a user wants to be able to leave their own comments or create content, they need to register an account first. They'll need to provide their email address, create a username and password to create an account.
 
 
 ### Features

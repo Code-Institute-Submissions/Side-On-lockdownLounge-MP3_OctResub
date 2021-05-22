@@ -37,9 +37,8 @@ def account(username):
     stories = list(mongo.db.stories.find(
         {"created_by": username}))
     jokes = list(mongo.db.jokes.find({"created_by": username}))
-    if session["user"]:
-        return render_template(
-            "account.html", stories=stories, jokes=jokes, username=username)
+    return render_template(
+        "account.html", stories=stories, jokes=jokes, username=username)
 
 
 @app.route("/get_jokes")
@@ -337,4 +336,4 @@ def edit_story_comment(story_comment_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
         port=int(os.environ.get("PORT")),
-        debug=False)
+        debug=True)
