@@ -143,8 +143,6 @@ def add_story():
 
 @app.route("/add_story_comment/<story_id>", methods=["GET", "POST"])
 def add_story_comment(story_id):
-    story_comment = mongo.db.story_comment.find_one(
-        {"_id": ObjectId(story_comment_id)})
     if request.method == "POST":
         story_comment = {
             "story_id": request.form.get("story_id"),
