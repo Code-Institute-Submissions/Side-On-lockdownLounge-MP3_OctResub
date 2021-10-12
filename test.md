@@ -97,11 +97,6 @@ Page shows other user stories and jokes after clicking on their username anywher
 
 ![Other user stories and jokes]()
 
-
-## 11 See other users jokes and stories
-
-
-
 #### Validators
 To ensure all code uses correct syntax and doesnt 
 
