@@ -150,7 +150,8 @@ def add_story_comment(story_id):
         }
         mongo.db.story_comment.insert_one(story_comment)
         flash("Comment Successfully Added")
-        return redirect(url_for("get_stories"))
+        return redirect(request.referrer)
+
 
 
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
@@ -165,7 +166,6 @@ def edit_story(story_id):
             }
             mongo.db.stories.update({"_id": ObjectId(story_id)}, submit)
             flash("Story Successfully Edited")
-
         return render_template("edit_story.html", story=story)
     else:
         return redirect(url_for("get_stories"))
@@ -237,7 +237,7 @@ def add_joke_comment(joke_id):
             }
             mongo.db.joke_comment.insert_one(joke_comment)
             flash("Comment Successfully Added")
-            return redirect(url_for("get_jokes"))
+            return redirect(request.referrer)
     else:
         return render_template("register.html")
 
@@ -261,7 +261,7 @@ def delete_joke_comment(joke_comment_id):
     if joke_comment.get("created_by") == session.get("user", ""):
         mongo.db.joke_comment.remove({"_id": ObjectId(joke_comment_id)})
         flash("Joke Comment Deleted")
-        return redirect(url_for("get_jokes"))
+        return redirect(request.referrer)
     else:
         return redirect(url_for("get_jokes"))
 
@@ -307,7 +307,7 @@ def delete_story_comment(story_comment_id):
     if story_comment.get("created_by") == session.get("user", ""):
         mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
         flash("Story Comment Deleted")
-        return redirect(url_for("get_stories"))
+        return redirect(request.referrer)
     else:
         return redirect(url_for("get_stories"))
 
