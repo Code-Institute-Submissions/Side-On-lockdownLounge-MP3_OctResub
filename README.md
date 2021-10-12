@@ -16,44 +16,44 @@ Here are some examples of potential circumstances different users might be in an
 The new user will be taken to the index page and there is a small amount of text. As this is only a forum page, I haven't gone for large images or things like that, as it's purely user content based. 
 They will be explained what the website is and where to go to find stories and jokes. They'll also be told they need to be signed up to leave comments or content. Links are on the page to take the user to the relevant page.
 
-#### 2. New user wanting to create a story
+#### 2. User wants to create a story
 The user can go to the story page on the navigation bar at the top. If they are a mobile user, there is a burger icon in the top left corner for them to click on and the other pages will show on there. When they get to the page, they will be reminded that they need to register for an account before they can add a story. The Add Story button is only visible to users who have an account and are signed in.
 
-#### 3. New user wanting to comment on a story
-As above the user will be told if they want to comment on a story, they'll have to register an account. They can then go to the stories pages and find a story they want to comment on.
-
-#### 4. New user wanting to look at jokes
-The user is firstly taken to the home page where the website function is explained. They are given two options to get to the jokes page. They can either click on the jokes anchor tag, or go to the 'Jokes' link found in the navbar. 
-
-#### 5. New user wanting to comment on a joke
-This is the same process as the user wanting to comment on a joke. They are told to register an account before doing so and are then able to comment on the joke.
-
-#### 6. New user wanting to add their own joke
-Same process as the user wanting to create a story, then will need to go to the joke page after having registered their account.
-
-#### 7. New user wanting to sign in and register an account
-This will be made clear is the user wants to add any content to the website. They will be given a link to the register page on each page of the website to make it easier for them to find, it also encourages them to create an account. This page is kept simple and the user only needs to input basic details to create their account.
-
-#### 8. User wanting to look at the stories they've added
-This is after the user has signed into their account. They are then shown the Profile navigation tab. They can go onto this page and are taken to the 'Stories' tab which shows all of the stories they've created.
-
-#### 9. User wanting to edit a story they've added
+#### 3. User wants to edit a story they've created
 This user can do this by either finding their story and clicking (hover on desktop) on the small green circle. This opens up and there is a yellow icon whih shows a pencil and a square. I chose this icon because it looks like the most comment icon when editing something. The user is then taken to another page for their story and the story title and content fields are pre-populated with the original story contents. They can then click on the edit button and their story will be edited. They will then be taken back to the stories page. 
 
-#### 10. User wanting to edit a joke they've added
-This will be done similarly to editing a story. The use can find their own joke either from the Jokes page, or from within their profile page where it lists all of the jokes they've added to the website.
+#### 4. User wants to delete a story they've created
+A user may later want to delete a story they've created. If they are signed into their account, they will be able to see the delete button next to their story.
 
-#### 11. User wanting to look at what jokes they've added
-This can be found if this user is logged into their account, and go to their profile page. It shows a list of all the jokes they've added, and they can click on each individual one to see if anybody has commented on their post.
+#### 5. User wants to leave a comment on a story
+As above the user will be told if they want to comment on a story, they'll have to register an account. They can then go to the stories pages and find a story they want to comment on.
 
-#### 12. User wanting to see if they've got a comment on any of their stories or jokes
-The user will need to have an account and be signed into it. They can then go to their Profile page and see by what stories and jokes they've added by clicking on the relevant tab. From here, the user can edit or delete their joke or story. 
+#### 6. User wants to create their own joke
+Same process as the user wanting to create a story, then will need to go to the joke page after having registered their account.
 
-#### 13. User wants to see other users jokes and stories
+#### 7. User wants to edit their own joke
+Same process as the user wanting to edit their own story. They can do this from their Account page, or from the joke page.
+
+#### 8. User wants to delete their own joke
+User wants to be able to delete their own joke from the page.
+
+#### 9. User wants to leave a comment on a joke
+This is the same process as the user wanting to comment on a story. They are told to register an account before doing so and are then able to comment on the joke.
+
+#### 10. User wants to edit their comment
+The user wants to change the comment they've left on a joke or story, maybe after noticing a spelling mistake.
+
+#### 11. User wants to delete their comment
+The user wants to remove their story or joke comment completely from the website and the database.
+
+#### 12. User wants to register and sign into their account
+This will be made clear is the user wants to add any content to the website. They will be given a link to the register page on each page of the website to make it easier for them to find, it also encourages them to create an account. This page is kept simple and the user only needs to input basic details to create their account.
+
+#### 13. User wants to look at the stories and jokes they've created
+This is after the user has signed into their account. They are then shown the Profile navigation tab. They can go onto this page and are taken to the 'Stories' tab which shows all of the stories they've created.
+
+#### 14. User wants to see other users jokes and stories
 The user will need to find a story or joke and then click on a the username of the person they want to see. They will then be taken to a profile of that user, showing all of their content. They can then go into each individual joke or story to leave a comment, if they are signed in.
-
-#### 14. User wants to write a comment on somebody elses content
-Users can do this, after registering and logging in to their account, on any joke or story. A button is shown at the bottom of the content, as well as the text box to write their comment.
 
 ### Wireframe designs 
 All of the wireframes were designed at the start of the project to help me get an idea in my head of what I wanted to aim for. I wanted to create a very simple forum where people could share positive content with each other. The wireframes show both the deskptop and mobile designs. 
