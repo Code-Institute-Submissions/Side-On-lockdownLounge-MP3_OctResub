@@ -3,6 +3,7 @@ from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
+from datetime import datetime
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -27,6 +28,7 @@ def index():
 @app.route("/get_stories")
 def get_stories():
     stories = list(mongo.db.stories.find())
+    stories.reverse()
     return render_template("stories.html", stories=stories)
 
 
@@ -44,6 +46,7 @@ def account(username):
 @app.route("/get_jokes")
 def get_jokes():
     jokes = list(mongo.db.jokes.find())
+    jokes.reverse()
     return render_template("jokes.html", jokes=jokes)
 
 
@@ -129,7 +132,8 @@ def add_story():
             story = {
                 "story_title": request.form.get("story_title"),
                 "story_content": request.form.get("story_content"),
-                "created_by": session["user"]
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.stories.insert_one(story)
             flash("Story Successfully Added")
@@ -146,7 +150,8 @@ def add_story_comment(story_id):
         story_comment = {
             "story_id": request.form.get("story_id"),
             "story_comment": request.form.get("story_comment"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "last_modified": datetime.now().strftime('%a %d %B %Y')
         }
         mongo.db.story_comment.insert_one(story_comment)
         flash("Comment Successfully Added")
@@ -187,6 +192,7 @@ def joke(joke_id):
     joke = mongo.db.jokes.find_one({"_id": ObjectId(joke_id)})
     joke_comment = list(
         mongo.db.joke_comment.find({'joke_id': joke_id}))
+    joke_comment.reverse()
     return render_template(
         "joke.html", joke=joke, joke_comment=joke_comment)
 
@@ -199,6 +205,7 @@ def add_joke():
                 "joke_title": request.form.get("joke_title"),
                 "joke_content": request.form.get("joke_content"),
                 "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.jokes.insert_one(joke)
             flash("Your joke has been added!")
@@ -233,7 +240,8 @@ def add_joke_comment(joke_id):
             joke_comment = {
                 "joke_id": request.form.get("joke_id"),
                 "joke_comment": request.form.get("joke_comment"),
-                "created_by": session["user"]
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.joke_comment.insert_one(joke_comment)
             flash("Comment Successfully Added")
