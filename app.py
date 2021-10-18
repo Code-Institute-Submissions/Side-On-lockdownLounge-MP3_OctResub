@@ -158,7 +158,6 @@ def add_story_comment(story_id):
         return redirect(request.referrer)
 
 
-
 @app.route("/edit_story/<story_id>", methods=["GET", "POST"])
 def edit_story(story_id):
     story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
@@ -167,7 +166,8 @@ def edit_story(story_id):
             submit = {
                 "story_title": request.form.get("story_title"),
                 "story_content": request.form.get("story_content"),
-                "created_by": session["user"]
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.stories.update({"_id": ObjectId(story_id)}, submit)
             flash("Story Successfully Edited")
@@ -224,7 +224,8 @@ def edit_joke(joke_id):
             submit = {
                 "joke_title": request.form.get("joke_title"),
                 "joke_content": request.form.get("joke_content"),
-                "created_by": session["user"]
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.jokes.update({"_id": ObjectId(joke_id)}, submit)
             flash("Joke Successfully Edited")
@@ -283,7 +284,8 @@ def edit_joke_comment(joke_comment_id):
             submit = {
                 "joke_id": request.form.get("joke_id"),
                 "joke_comment": request.form.get("joke_comment"),
-                "created_by": session["user"]
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.joke_comment.update(
                 {"_id": ObjectId(joke_comment_id)}, submit)
@@ -329,7 +331,8 @@ def edit_story_comment(story_comment_id):
             submit = {
                 "story_id": request.form.get("story_id"),
                 "story_comment": request.form.get("story_comment"),
-                "created_by": session["user"]
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
             }
             mongo.db.story_comment.update(
                 {"_id": ObjectId(story_comment_id)}, submit)
