@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 <div class="row">
 	<form class="center" action="{{ url_for('search_jokes') }}" method="POST">
 		<div class="search-bar center" style="width: 50%">
@@ -19,6 +20,7 @@
     <a href="{{ url_for('login') }}" class="btn-large">Login</a> <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register</a> 
 </div> 
   {% endif %} 
+
 {% if session.user %}
 	<div class="row center"> 
     <a href="{{ url_for('add_joke') }}" class="btn-large btn">Add a Joke!</a>
@@ -26,12 +28,14 @@
 {% endif %} 
 
 {% for joke in jokes %}
-  <div class="row center">   
-    <div class="s12">
+  <div class="row center">
       <div class="card joke-card">
-        <div class="card-content"><a href=" {{ url_for('joke', joke_id=joke._id) }}">
-          <h3>{{ joke.joke_title }}</h3></a> 
-        </div> <a class="left created-by" href="{{ url_for('profile', username=joke.created_by )}}">Told by: {{ joke.created_by }}</a> 
+        <div class="card-content">
+          <a href=" {{ url_for('joke', joke_id=joke._id) }}"><h3>{{ joke.joke_title }}</h3>
+          </a> 
+        </div> 
+        <a class="created-by" href="{{ url_for('profile', username=joke.created_by )}}">Told by: {{ joke.created_by }}</a>
+          <p class="date-created">Created: {{ joke.last_modified }}</p>
           {% if joke.created_by|lower == session.user|lower %}
             <div class="fixed-action-btn click-to-toggle right direction-left">
               <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i> </a>
@@ -52,7 +56,6 @@
           </div> 
       {% endif %} 
       </div>
-    </div>
   </div> 
 {% endfor %} 
 {% endblock %}

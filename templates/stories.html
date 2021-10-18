@@ -1,49 +1,65 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
+
 <div class="row">
 	<form class="center" action="{{ url_for('search_stories') }}" method="POST">
 		<div class="search-bar center" style="width: 50%">
-			<input type="text" name="search" id="search" minlength="3" class="validate" required placeholder="Search stories" /> </div>
+			<input type="text" name="search" id="search" minlength="3" class="validate" required placeholder="Search stories"/> </div>
 		<div class="search-bar">
 			<button type="submit" class="light-blue darken-1 search-btn btn text-shadow"> Search </button> <a href="{{ url_for('get_stories') }}" class="red search-btn btn text-shadow">Reset</a
       >
     </div>
   </form>
 </div>
+
 <div class="center welcome-message">
   <h1>Stories</h1>
   <p>Here you can read some stories on peoples lockdown experiences.</p>
   <p>If you're registered with an account, feel free to leave your own story!</p>
+
   {% if not session.user %}
     <p>Click on the button below to go to the registration page</p>
-    <a href="{{ url_for('login') }}" class="btn-large">Login</a> <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register</a> {% endif %} </div> {% if session.user %}
-      <div class="row center"> <a href="{{ url_for('add_story') }}" class="btn-large btn">Add a story!</a> </div> {% endif %} {% for story in stories %}
-      <div class="row center">
-        <div class="s12">
-          <div class="card">
-            <div class="card-content">
-              <a href=" {{ url_for('story', story_id=story._id) }}">
-                <h3>{{ story.story_title }}</h3></a>
-            </div> <a class="left created-by" href="{{ url_for('profile', username=story.created_by )}}">Written by: {{ story.created_by }}</a> {% if story.created_by|lower == session.user|lower %}
-            <div class="fixed-action-btn click-to-toggle right direction-left">
-              <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i> </a>
-              <ul>
-                <li>
-                  <a href="{{ url_for('delete_story', story_id=story._id) }}" class="btn-floating red" style="
-                  opacity: 1;
-                  transform: scale(1) translateY(0px) translateX(0px);
-                " onclick="return confirm('Are you sure you want to delete this story?');"> <i class="fas fa-times"></i> </a>
-                </li>
-                <li>
-                  <a href="{{ url_for('edit_story', story_id=story._id) }}" class="btn-floating orange" style="
-                  opacity: 1;
-                  transform: scale(1) translateY(0px) translateX(0px);
-                "> <i class="far fa-edit"></i> </a>
-                </li>
-              </ul>
-            </div> 
-    {% endif %} 
-          </div>
+    <a href="{{ url_for('login') }}" class="btn-large">Login</a> <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register</a> 
+  {% endif %} 
+</div>
+
+{% if session.user %}
+  <div class="row center"> <a href="{{ url_for('add_story') }}" class="btn-large btn">Add a story!</a> </div> 
+{% endif %} 
+
+{% for story in stories %}
+  <div class="row center">
+    <div class="s12">
+      <div class="card">
+        <div class="card-content">
+          <a href=" {{ url_for('story', story_id=story._id) }}">
+            <h3>{{ story.story_title }}</h3></a>
         </div>
-      </div> 
-    {% endfor %} 
-    {% endblock %}
+        <a class="left created-by" href="{{ url_for('profile', username=story.created_by )}}">Written by: {{ story.created_by }}</a> 
+        <p class="date-created">Created: {{ story.last_modified }}</p>
+        {% if story.created_by|lower == session.user|lower %}
+          <div class="fixed-action-btn click-to-toggle right direction-left">
+            <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i></a>
+          <ul>
+            <li>
+              <a href="{{ url_for('delete_story', story_id=story._id) }}" class="btn-floating red" style="
+              opacity: 1;
+              transform: scale(1) translateY(0px) translateX(0px);
+            " onclick="return confirm('Are you sure you want to delete this story?');"> <i class="fas fa-times"></i> </a>
+            </li>
+            <li>
+              <a href="{{ url_for('edit_story', story_id=story._id) }}" class="btn-floating orange" style="
+              opacity: 1;
+              transform: scale(1) translateY(0px) translateX(0px);
+            "> <i class="far fa-edit"></i>
+            </a>
+            </li>
+          </ul>
+        </div> 
+        {% endif %} 
+      </div>
+    </div>
+  </div> 
+{% endfor %} 
+
+{% endblock %}
