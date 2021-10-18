@@ -76,12 +76,26 @@ nav .brand-logo {
 }
 
 .created-by {
-  text-align: left;
   position: absolute;
   left: 5px;
   top: 5px;
   font-size: 1rem;
   z-index: 998;
+}
+
+.date-created {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 1rem;
+  z-index: 998;
+  margin: 0;
+}
+
+.comment-created {
+  font-size: .8rem;
+  z-index: 998;
+  margin: 0;
 }
 
 .content-created-by{
@@ -216,4 +230,10 @@ form {
   white-space: pre-wrap;
   font-size: 1.4rem;
   padding: 10px;
+}
+
+@media screen and (max-width: 460px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
