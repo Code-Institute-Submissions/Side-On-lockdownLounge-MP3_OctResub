@@ -12,90 +12,86 @@ Below are screenshots of the testing process, showing was was testing and the re
 
 This is the first page the user is shown when they go to the site. The screenshot on the left is the mobile version, which shows a burger icon on the top left which, when clicked, will show the links to the other pages.
 
-![Home Page]()
+![Home Page](test-images/1-user-visit-site.png)
 
-## 2. Adding a story
+## 2. Create a story
 
 Users can add a story once they are signed into an account. The buttons on the home page and story page change depending on whether the user is signed in. If they are, they are able to see the add story button, located on the story page, as well as the add story link on the navigation bar.
 
-![Add a story]()
+![Add a story](test-images/2-user-story.png)
 
 ## 3 Editing a story
 
 The icons to edit user stories and jokes are only visible to the user who created them. Testing has also been done to stop other users from being able to edit somebody elses story or joke.
 
-![Editing a story]()
+![Editing a story](test-images/3-edit-story.png)
 
 ## 4 Deleting a story
 
 The icons to edit user stories and jokes are only visible to the user who created them. Testing has also been done to stop other users from being able to edit somebody elses story or joke.
 
-![Deleting a story]()
+![Deleting a story](test-images/4-delete-story.png)
 
 ## 5. Commenting on a story
 
 Similar to the add story button, the comment button only appears if the user is signed in. They are able to comment on the story.
 
-![Comment on a story]()
+![Comment on a story](test-images/5-story-comment.png)
 
 ## 6 Adding a joke
 
 This works the same as the adding a joke page. Worth noting that this has been tested to stop people who aren't logged in, copying the add joke/joke url, and bypassing the feature.
 
-![Adding a joke]()
+![Adding a joke](test-images/6-add-joke.png)
 
 ## 7 Editing a joke
 
 The icons to edit user jokes are only visible to the user who created them. Testing has also been done to stop other users from being able to edit somebody elses joke.
 
-![Editing a joke]()
+![Editing a joke](test-images/7-edit-joke.png)
 
 ## 8 Deleting a joke
 
 The icon to delete user jokes are only visible to the user who created them. Testing has also been done to stop other users from being able to delete somebody elses joke.
 
-![Deleting a joke]()
+![Deleting a joke](test-images/8-delete-joke.png)
 
 ## 9 Comment on a joke 
 
 The user is able to comment on a joke, if they are logged in. After the comment is added, they stay on the same page.
 
-![Comment on a joke]()
+![Comment on a joke](test-images/9-joke-comment.png)
 
 ## 10 Editing a comment
 
 The icons to edit user comments are only visible to the user who created them. Testing has also been done to stop other users from being able to edit somebody elses comment.
 
-![Editing a comment]()
+![Editing a comment](test-images/10-edit-comment.png)
 
 ## 11 Deleting a comment
 
 The icons to delete user comments are only visible to the user who created them. Testing has also been done to stop other users from being able to delete somebody elses comment.
 
-![Deleting a comment]()
+![Deleting a comment](test-images/11-delete-comment.png)
 
-## 11. Register
+## 12 Register and Log in
 
 This page allows users to create their own account using an email and choosing their own username. It tells them what they can do, once they've created an account.
 
-![Register an account]()
-
-## 11. Log in
-
 Once the user has an account, they can log in on this page.
 
-![Log in to account]()
+![Register an account and log in](test-images/12-register-log-in.png)
 
 ## 13. Looking at own user stories and jokes
 
 This page can be accessed when the user is logged into their account. It shows all of their jokes and stories, and they are able to edit and delete from from here, without having to find them again on the website.
 
-![Look at own user stories and jokes]()
+![Look at own user stories and jokes](test-images/13-account.png)
 
 ## 14. See other user stories and jokes
 Page shows other user stories and jokes after clicking on their username anywhere on the website.
 
-![Other user stories and jokes]()
+![Other user stories and jokes](test-images/14-other-user-accounts.png)
 
 #### Validators
 To ensure all code uses correct syntax and doesnt 
