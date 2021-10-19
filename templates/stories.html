@@ -37,6 +37,8 @@
         </div>
         <a class="left created-by" href="{{ url_for('profile', username=story.created_by )}}">Written by: {{ story.created_by }}</a> 
         <p class="date-created">{{ story.last_modified }}</p>
+
+        <!-- Only allows the creator of the story to edit or delete it -->
         {% if story.created_by|lower == session.user|lower %}
           <div class="fixed-action-btn click-to-toggle right direction-left">
             <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i></a>
