@@ -106,8 +106,8 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
 ''' This is to get other user accounts '''
+
 
 @app.route("/profile/<username>")
 def profile(username):
@@ -117,7 +117,6 @@ def profile(username):
     jokes = list(mongo.db.jokes.find({"created_by": username}))
     return render_template(
         "profile.html", stories=stories, jokes=jokes, username=username)
-
 
 ''' Story Section '''
 
@@ -226,6 +225,7 @@ def delete_story(story_id):
         return redirect(url_for("get_stories"))
 
 ''' Joke Section '''
+
 
 @app.route("/joke/<joke_id>")
 def joke(joke_id):
@@ -336,6 +336,7 @@ def edit_joke_comment(joke_comment_id):
         return redirect(url_for("get_jokes"))
 
 ''' Searching section '''
+
 
 @app.route("/search_stories", methods=["GET", "POST"])
 def search_stories():
