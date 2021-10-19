@@ -40,6 +40,7 @@ def get_jokes():
 
 ''' User profile accounts section '''
 
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
