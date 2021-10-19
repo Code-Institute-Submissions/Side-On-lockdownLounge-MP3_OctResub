@@ -6,7 +6,7 @@
 		<p class="line-break left">{{ joke.joke_content }}</p>
 		<br />
 		<p class="content-created-by">Created by: <a href="{{ url_for('profile', username=joke.created_by )}}">{{ joke.created_by }}</a></p>
-    <p class="date-created">Created: {{ joke.last_modified }}</p>
+    <p class="date-created">{{ joke.last_modified }}</p>
 	</div>
 </div> 
 
@@ -39,7 +39,7 @@
 <div class="comment-box">
 	<p class="comment">{{ comment.joke_comment }}</p>
   <a href="{{ url_for('profile', username=comment.created_by )}}" class="comment-created-by">User: {{ comment.created_by }}</a>
-  <p class="comment-created">Created: {{ comment.last_modified }}</p>
+  <p class="comment-created">{{ comment.last_modified }}</p>
   {% if comment.created_by|lower == session.user|lower %}
     <div class="comment-btns">
       <a href="{{ url_for('delete_joke_comment', joke_comment_id=comment._id) }}" class="btn-floating comment-btn right red" style="opacity: 1; transform: scale(1) translateY(0px) translateX(0px)" onclick="return confirm('Are you sure you want to delete this comment?');"> <i class="fas fa-times"></i> </a>

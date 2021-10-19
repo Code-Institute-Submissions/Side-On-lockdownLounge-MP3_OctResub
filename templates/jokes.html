@@ -39,7 +39,7 @@
           </a> 
         </div> 
         <a class="created-by" href="{{ url_for('profile', username=joke.created_by )}}">Told by: {{ joke.created_by }}</a>
-          <p class="date-created">Created: {{ joke.last_modified }}</p>
+          <p class="date-created">{{ joke.last_modified }}</p>
           {% if joke.created_by|lower == session.user|lower %}
             <div class="fixed-action-btn click-to-toggle right direction-left">
               <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i></a>

@@ -24,7 +24,7 @@
         <div class="card">
           <div class="card-content">
             <p class="left created-by">Created by: {{ story.created_by }}</p>
-            <p class="date-created">Created: {{ story.last_modified }}</p>
+            <p class="date-created">{{ story.last_modified }}</p>
             <a href=" {{ url_for('story', story_id=story._id) }}">
             <h3>{{ story.story_title }}</h3></a>
           </div>
@@ -55,7 +55,7 @@
           <div class="card joke-card">
             <div class="card-content">
               <p class="left created-by">Created by: {{ joke.created_by }}</p>
-              <p class="date-created">Created: {{ joke.last_modified }}</p>
+              <p class="date-created">{{ joke.last_modified }}</p>
               <a href=" {{ url_for('joke', joke_id=joke._id) }}">
                 <h3>{{ joke.joke_title }}</h3></a>
             </div>
