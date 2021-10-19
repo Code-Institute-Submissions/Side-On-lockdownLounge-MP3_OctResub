@@ -221,12 +221,31 @@ Finally, create and env.py file. Enter the below code into this file. In the "se
         MONGO_URI", "mongodb+srv://<user>:<password to database>@<cluster name>.43yzg.mongodb.net/<database name>?retryWrites=true&w=majority
     os.environ.setdefault("MONGO_DBNAME", "<database name>")
 
+#### Heroku
+
+Next, let's get the Heroku app working.
+
+1. Sign up to Heroku.
+2. Click on the create new app button.
+3. Select which region is closest to you.
+4. Find the section which relates to deployment method.
+5. Set this to GitHub.
+6. Using your GitHub login details, connect to the GitHub project.
+7. Enter the repository you wish to connect to and deploy from.
+8. In the settings section, go to Config Vars.
+9. This is where you enter the details you used when creating the env.py file, which contains your database url and information.
+10. Make sure you have your Procfile set up correctly and updated.
+11. Also make sure the requirements.txt file has been updated with what's needed to run the app.
+12. Click the deploy tab.
+13. Select which branch you want to deploy.
+14. Wait for the app to build.
+15. Click on the view button to see the app!
 
 #### Copying the GitHub project
 
-GitHub Pages
+##### GitHub Pages
 
-The project was deployed to GitHub Pages using the following steps...
+The project can be cloned by using the following steps...
 
 Log in to GitHub and locate the GitHub Repository.
 
@@ -258,23 +277,6 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Press Enter. Your local clone will be created.
 
-### Heroku
-
-Sign up to Heroku
-Click on the create new app button
-Select which region is closest to you
-Find the section which relates to deployment method
-Set this to GitHub
-Using your GitHub login details, connect to GitHub
-Enter the repository you wish to connect to and deploy from
-In the settings section, go to Config Vars
-This is where you enter the details you used when creating the env.py file, containing your database url and information
-Ensure you have your Procfile set up correctly and updated
-Also ensure the requirements.txt file has been updated with what is needed to run the app
-Click the deploy tab
-Select which branch you want to deploy
-Wait for the app to build
-Click on the view button to see the app!
 
 ### Acknowledgements
 
