@@ -225,7 +225,7 @@ Finally, create and env.py file. Enter the below code into this file. In the "se
 
 Next, let's get the Heroku app working.
 
-1. Sign up to Heroku.
+1. Sign up to [Heroku](https://www.heroku.com).
 2. Click on the create new app button.
 3. Select which region is closest to you.
 4. Find the section which relates to deployment method.
@@ -241,7 +241,7 @@ Next, let's get the Heroku app working.
 14. Wait for the app to build.
 15. Click on the view button to see the app!
 
-#### Copying the GitHub project
+#### Cloning the GitHub project
 
 ##### GitHub Pages
 
