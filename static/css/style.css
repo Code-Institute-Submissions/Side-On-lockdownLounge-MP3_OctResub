@@ -1,5 +1,8 @@
+/* Fonts used for the whole site */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
+
+/* General accross site usage */
 
 body {
   background-color: #eee;
@@ -7,9 +10,42 @@ body {
   font-size: 2rem;
 }
 
+form {
+  padding-top: 10px;
+}
+
+/* Navigation bar */
+
+.brand-logo {
+  visibility: visible;
+}
+
 .navbar-fixed {
   z-index: 999;
 }
+
+.nav-wrapper {
+  background-color: #393e46;
+}
+
+nav .brand-logo {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.1rem;
+  padding-left: 10px;
+}
+
+.search-bar {
+  min-width: 200px;
+  display: inline-block;
+}
+
+.brand-logo-small-screen {
+  visibility: hidden;
+}
+
+/* Index page */
 
 .index-heading {
   margin-bottom: 40px;
@@ -20,9 +56,16 @@ body {
   padding-top: 20px;
 }
 
+.welcome-message {
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
 .register-info {
   font-size: 1rem;
 }
+
+/* Links */
 
 a {
   text-decoration: none;
@@ -45,22 +88,7 @@ a {
   filter: brightness(75%);
 }
 
-.nav-wrapper {
-  background-color: #393e46;
-}
-
-nav .brand-logo {
-  position: absolute;
-  color: #fff;
-  display: inline-block;
-  font-size: 2.1rem;
-  padding-left: 10px;
-}
-
-.welcome-message {
-  margin-bottom: 20px;
-  font-size: 1.6rem;
-}
+/* Cards */
 
 .card {
   background-color: #00adb5;
@@ -74,6 +102,8 @@ nav .brand-logo {
 .joke-card {
   background-color: #75c2f6;
 }
+
+/* Created by sections */
 
 .created-by {
   position: absolute;
@@ -109,6 +139,8 @@ nav .brand-logo {
   position: relative;
 }
 
+/* Comments */
+
 .comment-created-by {
   font-size: 1rem;
 }
@@ -123,9 +155,27 @@ nav .brand-logo {
   margin-top: 10px;
 }
 
+.register-comment {
+  font-size: 1.2rem;
+}
+
+.comment-box {
+  color: black;
+  width: 80%;
+  margin-bottom: 60px;
+  border-bottom: 1px solid black;
+}
+
+.comment {
+  margin-top: 5px;
+  font-size: 1.4rem;
+}
+
 .flashes h4 {
   line-height: 2;
 }
+
+/* Buttons */
 
 .fixed-action-btn {
   position: inherit;
@@ -176,17 +226,26 @@ nav .brand-logo {
   margin-top: 10px;
 }
 
-.search-bar {
-  min-width: 200px;
-  display: inline-block;
+form {
+    padding-top: 10px;
 }
 
-.brand-logo-small-screen {
-  visibility: hidden;
+.tab-text {
+  font-weight: 900;
 }
 
-.brand-logo {
-  visibility: visible;
+.line-break {
+  white-space: pre-wrap;
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+/* Changes to the style depending on the screen size */
+
+@media screen and (max-width: 460px) {
+  h1 {
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -199,41 +258,5 @@ nav .brand-logo {
     left: 45%;
     position: absolute; 
     font-size: 2.1rem;
-  }
-}
-
-form {
-    padding-top: 10px;
-}
-
-.tab-text {
-  font-weight: 900;
-}
-
-.register-comment {
-  font-size: 1.2rem;
-}
-
-.comment-box {
-  color: black;
-  width: 80%;
-  margin-bottom: 60px;
-  border-bottom: 1px solid black;
-}
-
-.comment {
-  margin-top: 5px;
-  font-size: 1.4rem;
-}
-
-.line-break {
-  white-space: pre-wrap;
-  font-size: 1.4rem;
-  padding: 10px;
-}
-
-@media screen and (max-width: 460px) {
-  h1 {
-    font-size: 3rem;
   }
 }
