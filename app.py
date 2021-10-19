@@ -32,23 +32,13 @@ def get_stories():
     return render_template("stories.html", stories=stories)
 
 
-@app.route("/account/<username>", methods=["GET", "POST"])
-def account(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    stories = list(mongo.db.stories.find(
-        {"created_by": username}))
-    jokes = list(mongo.db.jokes.find({"created_by": username}))
-    return render_template(
-        "account.html", stories=stories, jokes=jokes, username=username)
-
-
 @app.route("/get_jokes")
 def get_jokes():
     jokes = list(mongo.db.jokes.find())
     jokes.reverse()
     return render_template("jokes.html", jokes=jokes)
 
+''' User profile accounts section '''
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -71,6 +61,17 @@ def register():
         flash("Registration Successful")
         return redirect(url_for("account", username=session["user"]))
     return render_template("register.html")
+
+
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    stories = list(mongo.db.stories.find(
+        {"created_by": username}))
+    jokes = list(mongo.db.jokes.find({"created_by": username}))
+    return render_template(
+        "account.html", stories=stories, jokes=jokes, username=username)
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -105,16 +106,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
-@app.route("/profile/<username>")
-def profile(username):
-    username = mongo.db.users.find_one({"username": username})["username"]
-    stories = list(mongo.db.stories.find(
-        {"created_by": username}))
-    jokes = list(mongo.db.jokes.find({"created_by": username}))
-    return render_template(
-        "profile.html", stories=stories, jokes=jokes, username=username)
-
+''' Story Section '''
 
 @app.route("/story/<story_id>")
 def story(story_id):
@@ -176,6 +168,39 @@ def edit_story(story_id):
         return redirect(url_for("get_stories"))
 
 
+@app.route("/delete_story_comment/<story_comment_id>")
+def delete_story_comment(story_comment_id):
+    story_comment = mongo.db.story_comment.find_one(
+        {"_id": ObjectId(story_comment_id)})
+    if story_comment.get("created_by") == session.get("user", ""):
+        mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
+        flash("Story Comment Deleted")
+        return redirect(request.referrer)
+    else:
+        return redirect(url_for("get_stories"))
+
+
+@app.route("/edit_story_comment/<story_comment_id>", methods=["GET", "POST"])
+def edit_story_comment(story_comment_id):
+    story_comment = mongo.db.story_comment.find_one(
+        {"_id": ObjectId(story_comment_id)})
+    if story_comment.get("created_by") == session.get("user", ""):
+        if request.method == "POST":
+            submit = {
+                "story_id": request.form.get("story_id"),
+                "story_comment": request.form.get("story_comment"),
+                "created_by": session["user"],
+                "last_modified": datetime.now().strftime('%a %d %B %Y')
+            }
+            mongo.db.story_comment.update(
+                {"_id": ObjectId(story_comment_id)}, submit)
+            flash("Story Comment Successfully Edited")
+        return render_template(
+            "edit_story_comment.html", story_comment=story_comment)
+    else:
+        return redirect(url_for("get_stories"))
+
+
 @app.route("/delete_story/<story_id>")
 def delete_story(story_id):
     story = mongo.db.stories.find_one({"_id": ObjectId(story_id)})
@@ -186,6 +211,7 @@ def delete_story(story_id):
     else:
         return redirect(url_for("get_stories"))
 
+''' Joke Section '''
 
 @app.route("/joke/<joke_id>")
 def joke(joke_id):
@@ -295,6 +321,7 @@ def edit_joke_comment(joke_comment_id):
     else:
         return redirect(url_for("get_jokes"))
 
+''' Searching section '''
 
 @app.route("/search_stories", methods=["GET", "POST"])
 def search_stories():
@@ -310,40 +337,7 @@ def search_jokes():
     return render_template("jokes.html", jokes=jokes)
 
 
-@app.route("/delete_story_comment/<story_comment_id>")
-def delete_story_comment(story_comment_id):
-    story_comment = mongo.db.story_comment.find_one(
-        {"_id": ObjectId(story_comment_id)})
-    if story_comment.get("created_by") == session.get("user", ""):
-        mongo.db.story_comment.remove({"_id": ObjectId(story_comment_id)})
-        flash("Story Comment Deleted")
-        return redirect(request.referrer)
-    else:
-        return redirect(url_for("get_stories"))
-
-
-@app.route("/edit_story_comment/<story_comment_id>", methods=["GET", "POST"])
-def edit_story_comment(story_comment_id):
-    story_comment = mongo.db.story_comment.find_one(
-        {"_id": ObjectId(story_comment_id)})
-    if story_comment.get("created_by") == session.get("user", ""):
-        if request.method == "POST":
-            submit = {
-                "story_id": request.form.get("story_id"),
-                "story_comment": request.form.get("story_comment"),
-                "created_by": session["user"],
-                "last_modified": datetime.now().strftime('%a %d %B %Y')
-            }
-            mongo.db.story_comment.update(
-                {"_id": ObjectId(story_comment_id)}, submit)
-            flash("Story Comment Successfully Edited")
-        return render_template(
-            "edit_story_comment.html", story_comment=story_comment)
-    else:
-        return redirect(url_for("get_stories"))
-
-
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
