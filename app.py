@@ -106,7 +106,21 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+''' This is to get other user accounts '''
+
+@app.route("/profile/<username>")
+def profile(username):
+    username = mongo.db.users.find_one({"username": username})["username"]
+    stories = list(mongo.db.stories.find(
+        {"created_by": username}))
+    jokes = list(mongo.db.jokes.find({"created_by": username}))
+    return render_template(
+        "profile.html", stories=stories, jokes=jokes, username=username)
+
+
 ''' Story Section '''
+
 
 @app.route("/story/<story_id>")
 def story(story_id):
