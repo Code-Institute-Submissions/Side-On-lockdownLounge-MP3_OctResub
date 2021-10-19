@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- Searching for jokes -->
 <div class="row">
 	<form class="center" action="{{ url_for('search_jokes') }}" method="POST">
 		<div class="search-bar center" style="width: 50%">
-			<input type="text" name="search" id="search" minlength="3" class="validate" required placeholder="Search jokes" /> </div>
+			<input type="text" name="search" id="search" minlength="3" class="validate" required placeholder="Search jokes"/>
+    </div>
 		<div class="search-bar">
-			<button type="submit" class="light-blue darken-1 search-btn btn text-shadow"> Search </button> <a href="{{ url_for('get_jokes') }}" class="red search-btn btn text-shadow">Reset</a
-      >
+			<button type="submit" class="light-blue darken-1 search-btn btn text-shadow"> Search </button>
+      <a href="{{ url_for('get_jokes') }}" class="red search-btn btn text-shadow">Reset</a>
     </div>
   </form>
 </div>
@@ -17,9 +20,10 @@
   <p>If you're registered with an account, feel free to leave your own story!</p>
   {% if not session.user %}
     <p>Click on the button below to go to the registration page</p>
-    <a href="{{ url_for('login') }}" class="btn-large">Login</a> <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register</a> 
+    <a href="{{ url_for('login') }}" class="btn-large">Login</a>
+    <a href="{{ url_for('register') }}" class="btn-large register-button orange darken-1">Register</a>
 </div> 
-  {% endif %} 
+  {% endif %}
 
 {% if session.user %}
 	<div class="row center"> 
@@ -38,19 +42,19 @@
           <p class="date-created">Created: {{ joke.last_modified }}</p>
           {% if joke.created_by|lower == session.user|lower %}
             <div class="fixed-action-btn click-to-toggle right direction-left">
-              <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i> </a>
+              <a class="btn-floating btn-large black"> <i class="far fa-hand-point-left"></i></a>
               <ul>
                 <li>
                   <a href="{{ url_for('delete_joke', joke_id=joke._id) }}" class="btn-floating red" style="
                         opacity: 1;
                         transform: scale(1) translateY(0px) translateX(0px);
-                      " onclick="return confirm('Are you sure you want to delete this item?');"> <i class="fas fa-times"></i> </a>
+                      " onclick="return confirm('Are you sure you want to delete this item?');"> <i class="fas fa-times"></i></a>
                 </li>
                 <li>
                   <a href="{{ url_for('edit_joke', joke_id=joke._id) }}" class="btn-floating orange" style="
                         opacity: 1;
                         transform: scale(1) translateY(0px) translateX(0px);
-                      "> <i class="far fa-edit"></i> </a>
+                      "> <i class="far fa-edit"></i></a>
                 </li>
               </ul>
           </div> 
