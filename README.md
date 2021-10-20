@@ -234,9 +234,9 @@ Next, let's get the Heroku app working.
 7. Enter the repository you wish to connect to and deploy from.
 8. In the settings section, go to Config Vars.
 9. This is where you enter the details you used when creating the env.py file, which contains your database url and information.
-10. Make sure you have your Procfile set up correctly and updated.
-11. Also make sure the requirements.txt file has been updated with what's needed to run the app.
-12. Click the deploy tab.
+10. Make sure you have your Procfile in your project is set up correctly and updated. (Refer to the above walkthrough)
+11. Also make sure the requirements.txt file has been updated with what's needed to run the app. (Refer to the above walkthrough)
+12. Click on the deploy tab.
 13. Select which branch you want to deploy.
 14. Wait for the app to build.
 15. Click on the view button to see the app!
