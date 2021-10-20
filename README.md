@@ -179,8 +179,12 @@ All of the code I used I've tailored to suite my needs. I've taken sections of c
 
 ### Deployment
 
+#### Local deployment
+
+
+
 #### Configuration within Python and required code 
-Initially you'll need to configure your app.py file. You'll be required to import your local env.py for local environments in order to connect with Heroku.
+Initially you'll need to configure your app.py file. You'll be required to import your local env.py for local environments in order to connect with Heroku. 
 
 Add this doe to your app.py (or whatever is the file name for your app) as follows:
 
@@ -243,44 +247,26 @@ Next, let's get the Heroku app working.
 
 #### Cloning the GitHub project
 
-##### GitHub Pages
+1. Log in to GitHub and locate the GitHub Repository you want to clone.
 
-The project can be cloned by using the following steps...
+2. Under the repository name, click "Code".
 
-Log in to GitHub and locate the GitHub Repository.
+3. To clone the repository, select the HTTPS tab and copy the URL.
 
-At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+4. Open Git Bash.
 
-Scroll down the Settings page until you locate the "GitHub Pages" Section, copy the link shown.
+5. Change the current working directory to the location where you want the cloned directory to be made.
 
-Under "Source", click the dropdown called "None" and select "Master Branch".
-
-The page will automatically refresh.
-
-Scroll back down through the page to locate the now published site link in the "GitHub Pages" section.
-
-Making a Local Clone
-
-Log in to GitHub and locate the GitHub Repository.
-
-Under the repository name, click "Clone or download".
-
-To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-
-Open Git Bash.
-
-Change the current working directory to the location where you want the cloned directory to be made.
-
-Type git clone, and then paste the URL you copied in Step 3.
+6. Type git clone, and then paste the URL you copied in Step 3.
 
 $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
-Press Enter. Your local clone will be created.
+7. Press Enter. Your local clone will be created.
 
 
 ### Acknowledgements
 
-As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts and inutuitive designs. Unfortunately due to personal circumstances, I was unable to make the first submission. There was a lot more I wanted to do with the project, however was unable to invest the time I wanted.
+As this project is mainly focused on the backend programming skills involving databases, I used Materialize to quickly create a basic looking website which then allowed me to create a forum style website. I also looked at websites such as reddit.com and urbandictionary for their simple layouts and inutuitive designs.
 
 I used part of the deployment section from the readme.md file created by AWsSG: https://github.com/AwsSG/wurc/blob/master/README.md.
 
